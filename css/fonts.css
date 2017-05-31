@@ -1,0 +1,8 @@
+/* source-code-pro-normal - latin */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: regular;
+  src: url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local('Source Code Pro'), local('SourceCode Pro-Normal'), url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.eot?#iefix") format('embedded-opentype'), url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.woff2") format('woff2'), url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.woff") format('woff'), url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.ttf") format('truetype'), url("//lib.baomitu.com/fonts/source-code-pro/source-code-pro-v6-latin-regular.svg#SourceCode Pro") format('svg'); /* Legacy iOS */
+}

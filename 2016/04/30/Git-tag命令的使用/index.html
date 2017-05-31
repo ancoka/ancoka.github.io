@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git tag命令的使用 | Ancoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
+<meta name="keywords" content="版本控制,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git tag命令的使用">
+<meta property="og:url" content="http://www.ucoolife.com/2016/04/30/Git-tag命令的使用/index.html">
+<meta property="og:site_name" content="Ancoka">
+<meta property="og:description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
+<meta property="og:updated_time" content="2017-05-30T05:29:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git tag命令的使用">
+<meta name="twitter:description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
+  
+    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Git-tag命令的使用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/30/Git-tag命令的使用/" class="article-date">
+  <time class="post-time" datetime="2016-04-30T04:16:45.000Z" itemprop="datePublished">
+    <span class="post-month">4月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git tag命令的使用
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。</p>
+<h3>查看标签</h3>
+
+<ul>
+<li><p>列表所有标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag</div></pre></td></tr></table></figure>
+</li>
+<li><p>列出版本为1开头的标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -l &quot;1.*&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h3>新建标签</h3>
+
+<p>Git使用的标签有两种类型：轻量级的标签（lightweight）和含附注的标签（annotated）轻量级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，电子邮件地址和日期，以及标签说明，标签本身也允许使用GNU Privacy Guard (GPG)来签署或验证。一般建议使用含附注型的标签，以便保留相关信息；当然，如果只是临时性加注标签，或者不需要旁注额外信息，用轻量级标签也是可以的。</p>
+<p><strong>1.含附注的标签</strong></p>
+<p>创建一个含附注类型的标签非常简单，用-a（译注：取annotated的首字母）指定标签名字即可，-m选项则指定了对应的标签说明。若没有-m参数，Git会启用编辑器让你输入标签说明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a 1.0 -m &quot;tag 1.0&quot;</div></pre></td></tr></table></figure>
+<p><strong>2.轻量级标签</strong></p>
+<p>轻量级标签实际上就是一个保存着对应提交对象的校验和信息的文件。要创建这样的标签，一个-a，-s 或-m选项都不用，直接给出标签名字即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag 1.0</div></pre></td></tr></table></figure>
+<h3>签署标签</h3>
+
+<p>如果你有自己的私钥，还可以用GPG来签署标签，只需要把之前的-a改为-s（译注：取signed的首字母）即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -s 1.0 -m &quot;signed tag 1.0&quot;</div></pre></td></tr></table></figure>
+<p>运行git show会看到对应的GPG签名也附在其内</p>
+<h3>验证标签</h3>
+
+<p>可以使用git tag -v [tag-name]（译注：取 verify 的首字母）的方式验证已经签署的标签。此命令会调用GPG来验证签名，所以你需要有签署者的公钥，存放在keyring中，才能验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -v 1.0</div></pre></td></tr></table></figure>
+<p>对于未签署的标签进行验证，会报错。</p>
+<h3>后期加注标签</h3>
+
+<p>如果你昨天提交的代码，忘记打标签的话，没关系，Git允许你对之前的提交加注标签，你需要像下面这样，找到要加标签的commit id，然而只需要前几位就可以:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log --pretty=oneline --abbrev-commit</div><div class="line">...</div><div class="line">5e00146 fix README.md</div><div class="line">6ba7280 修改描述</div><div class="line">1902d5c feat(examples/atom.php): 新增使用demo</div><div class="line">79171e3 Initialization project</div><div class="line">38100a1 Initial commit</div></pre></td></tr></table></figure>
+<p>比如说要对，上面的“新增使用demo”那次提交加注标签，它对应的commit id是1902d5c，执行如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a 1.0 -m &quot;tag 1.0&quot; 1902d5c</div></pre></td></tr></table></figure>
+<h3>推送和删除远程标签</h3>
+
+<ul>
+<li><p>推送远程标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin [tag-name]</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除远程标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :refs/tags/[tag-name]</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/04/30/Git-tag命令的使用/" data-id="cj3d9cd380002m86f1rcrrpnr" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/07/Laravel-增加自定义全局函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Laravel 增加自定义全局函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/01/微软将要添加Linux命令行到Windows-10系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">微软将要添加Linux命令行到Windows 10系统</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Ancoka</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 Ancoka<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

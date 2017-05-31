@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP实现数据的加解密 | Ancoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于，PC端软件需要与WEB端通过API进行交互，如果采用明文传输，安全性便没有什么可言，API交互时，所有参数交互，均采用加密信息进行传输。这样即使别人采用抓包工具，抓取相关信息，看到的也都是加密后的东西，数据传输安全性会提高不少。 因本人编程方面还属于小白吧，c及c++方面的东西没精力去学习了解，这里只贴出WEB端PHP实现的加解密方法，PC端软件需要采用相同原理，不然解密出来就是一串乱码。">
+<meta name="keywords" content="PHP,对称加密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP实现数据的加解密">
+<meta property="og:url" content="http://www.ucoolife.com/2015/11/24/PHP实现数据的加解密/index.html">
+<meta property="og:site_name" content="Ancoka">
+<meta property="og:description" content="由于，PC端软件需要与WEB端通过API进行交互，如果采用明文传输，安全性便没有什么可言，API交互时，所有参数交互，均采用加密信息进行传输。这样即使别人采用抓包工具，抓取相关信息，看到的也都是加密后的东西，数据传输安全性会提高不少。 因本人编程方面还属于小白吧，c及c++方面的东西没精力去学习了解，这里只贴出WEB端PHP实现的加解密方法，PC端软件需要采用相同原理，不然解密出来就是一串乱码。">
+<meta property="og:updated_time" content="2017-05-30T03:32:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP实现数据的加解密">
+<meta name="twitter:description" content="由于，PC端软件需要与WEB端通过API进行交互，如果采用明文传输，安全性便没有什么可言，API交互时，所有参数交互，均采用加密信息进行传输。这样即使别人采用抓包工具，抓取相关信息，看到的也都是加密后的东西，数据传输安全性会提高不少。 因本人编程方面还属于小白吧，c及c++方面的东西没精力去学习了解，这里只贴出WEB端PHP实现的加解密方法，PC端软件需要采用相同原理，不然解密出来就是一串乱码。">
+  
+    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-PHP实现数据的加解密" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/24/PHP实现数据的加解密/" class="article-date">
+  <time class="post-time" datetime="2015-11-24T02:49:47.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">24</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP实现数据的加解密
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于，PC端软件需要与WEB端通过API进行交互，如果采用明文传输，安全性便没有什么可言，API交互时，所有参数交互，均采用加密信息进行传输。这样即使别人采用抓包工具，抓取相关信息，看到的也都是加密后的东西，数据传输安全性会提高不少。</p>
+<p>因本人编程方面还属于小白吧，c及c++方面的东西没精力去学习了解，这里只贴出WEB端PHP实现的加解密方法，PC端软件需要采用相同原理，不然解密出来就是一串乱码。</p>
+<a id="more"></a>
+<p>别的不扯了，直接上代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Crypter</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> $key = <span class="string">'yefeng_blog'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">setKey</span><span class="params">($key)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">self</span>::$key = $key;  </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">encrypt</span><span class="params">($txtStream)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//密锁串，不能出现重复字符，内有A-Z,a-z,0-9,/,=,+,_,</span></div><div class="line">        $lockstream = <span class="string">'st=lDEFABCNOPyzghi_jQRST-UwxkVWXYZabcdef+IJK6/7nopqr89LMmGH012345uv'</span>;</div><div class="line">        <span class="comment">//随机找一个数字，并从密锁串中找到一个密锁值</span></div><div class="line">        $lockLen = strlen($lockstream);</div><div class="line">        $lockCount = rand(<span class="number">0</span>,$lockLen<span class="number">-1</span>);</div><div class="line">        $randomLock = $lockstream[$lockCount];</div><div class="line">        <span class="comment">//结合随机密锁值生成MD5后的密码</span></div><div class="line">        $password = md5(<span class="keyword">self</span>::$key.$randomLock);</div><div class="line">        <span class="comment">//开始对字符串加密</span></div><div class="line">        $txtStream = base64_encode($txtStream);</div><div class="line">        $tmpStream = <span class="string">''</span>;</div><div class="line">        $i=<span class="number">0</span>;$j=<span class="number">0</span>;$k = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> ($i=<span class="number">0</span>; $i&lt;strlen($txtStream); $i++) &#123;</div><div class="line">            $k = ($k == strlen($password)) ? <span class="number">0</span> : $k;</div><div class="line">            $j = (strpos($lockstream,$txtStream[$i])+$lockCount+ord($password[$k]))%($lockLen);</div><div class="line">            $tmpStream .= $lockstream[$j];</div><div class="line">            $k++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> $tmpStream.$randomLock;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">decrypt</span><span class="params">($txtStream)</span></span></div><div class="line">    &#123;</div><div class="line"></div><div class="line">        $lockstream = <span class="string">'st=lDEFABCNOPyzghi_jQRST-UwxkVWXYZabcdef+IJK6/7nopqr89LMmGH012345uv'</span>;</div><div class="line"></div><div class="line">        $lockLen = strlen($lockstream);</div><div class="line">        <span class="comment">//获得字符串长度</span></div><div class="line">        $txtLen = strlen($txtStream);</div><div class="line">        <span class="comment">//截取随机密锁值</span></div><div class="line">        $randomLock = $txtStream[$txtLen - <span class="number">1</span>];</div><div class="line">        <span class="comment">//获得随机密码值的位置</span></div><div class="line">        $lockCount = strpos($lockstream,$randomLock);</div><div class="line">        <span class="comment">//结合随机密锁值生成MD5后的密码</span></div><div class="line">        $password = md5(<span class="keyword">self</span>::$key.$randomLock);</div><div class="line">        <span class="comment">//开始对字符串解密</span></div><div class="line">        $txtStream = substr($txtStream,<span class="number">0</span>,$txtLen<span class="number">-1</span>);</div><div class="line">        $tmpStream = <span class="string">''</span>;</div><div class="line">        $i=<span class="number">0</span>;$j=<span class="number">0</span>;$k = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;strlen($txtStream); $i++)&#123;</div><div class="line">            $k = ($k == strlen($password)) ? <span class="number">0</span> : $k;</div><div class="line">            $j = strpos($lockstream,$txtStream[$i]) - $lockCount - ord($password[$k]);</div><div class="line">            <span class="keyword">while</span>($j &lt; <span class="number">0</span>)&#123;</div><div class="line">                $j = $j + ($lockLen);</div><div class="line">            &#125;</div><div class="line">            $tmpStream .= $lockstream[$j];</div><div class="line">            $k++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> base64_decode($tmpStream);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>encrypt是加密算法，decrypt是解密算法，setKey就不多说了，相信看到就懂得了。下面是加解密例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">include</span>(<span class="string">'./Crypter.php'</span>);</div><div class="line">Crypter::setKey(<span class="string">'test'</span>);</div><div class="line">$json = json_encode(</div><div class="line">    <span class="keyword">array</span>(</div><div class="line">        <span class="string">'name'</span> =&gt; <span class="string">'testName'</span>,</div><div class="line">        <span class="string">'value'</span> =&gt; <span class="string">'testValue'</span>,</div><div class="line">    )</div><div class="line">);</div><div class="line">$encode = Crypter::encrypt($json);</div><div class="line"><span class="keyword">echo</span> <span class="string">"加密后："</span>.$encode.<span class="string">"\n"</span>;</div><div class="line">$decode = Crypter::decrypt($en);</div><div class="line"><span class="keyword">echo</span> <span class="string">"解密后："</span>.$decode.<span class="string">"\n"</span>;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2015/11/24/PHP实现数据的加解密/" data-id="cj3d9cd3k000bm86fyxiswiro" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对称加密/">对称加密</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/29/shell脚本实现mysql数据库自动备份/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Shell脚本实现mysql数据库自动备份
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/22/Linux服务器实现无密登陆/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Linux服务器实现无密登陆</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Ancoka</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 Ancoka<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

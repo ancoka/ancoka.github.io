@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初识版本控制Git（－） | Ancoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git是什么?  Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目及有效且高速的处理从很小到非常大的项目版本管理。 什么是版本控制 ?  版本控制系统其实就是，通过文档控制，记录程序各个模块的改动，并且为之编上序号记录下来。以便日后因某次错误提交，可以实现快速会滚至修改前的内容。并且版本控制可以实现多人协作功能，使多人在一个项目上做不同的内容而且互不影响。">
+<meta name="keywords" content="版本控制,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识版本控制Git（－）">
+<meta property="og:url" content="http://www.ucoolife.com/2015/12/22/初识版本控制Git（－）/index.html">
+<meta property="og:site_name" content="Ancoka">
+<meta property="og:description" content="Git是什么?  Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目及有效且高速的处理从很小到非常大的项目版本管理。 什么是版本控制 ?  版本控制系统其实就是，通过文档控制，记录程序各个模块的改动，并且为之编上序号记录下来。以便日后因某次错误提交，可以实现快速会滚至修改前的内容。并且版本控制可以实现多人协作功能，使多人在一个项目上做不同的内容而且互不影响。">
+<meta property="og:updated_time" content="2017-05-30T04:30:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识版本控制Git（－）">
+<meta name="twitter:description" content="Git是什么?  Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目及有效且高速的处理从很小到非常大的项目版本管理。 什么是版本控制 ?  版本控制系统其实就是，通过文档控制，记录程序各个模块的改动，并且为之编上序号记录下来。以便日后因某次错误提交，可以实现快速会滚至修改前的内容。并且版本控制可以实现多人协作功能，使多人在一个项目上做不同的内容而且互不影响。">
+  
+    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-初识版本控制Git（－）" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/22/初识版本控制Git（－）/" class="article-date">
+  <time class="post-time" datetime="2015-12-22T02:51:13.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">22</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识版本控制Git（－）
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3>Git是什么?</h3>
+
+<p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目及有效且高速的处理从很小到非常大的项目版本管理。</p>
+<h3>什么是版本控制 ?</h3>
+
+<p>版本控制系统其实就是，通过文档控制，记录程序各个模块的改动，并且为之编上序号记录下来。以便日后因某次错误提交，可以实现快速会滚至修改前的内容。并且版本控制可以实现多人协作功能，使多人在一个项目上做不同的内容而且互不影响。</p>
+<a id="more"></a>
+<h3>Git的由来</h3>
+
+<p>很多人都知道，Linux之父Linus Torvalds在1991年，编写并开源了linux内核，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。</p>
+<p>正因为Linus Torvalds开源了Linux内核，才吸引了大批的志愿者参与其中，Linux的壮大是靠全世界热心的志愿者参与的，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？</p>
+<p>事实是，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！</p>
+<p>你也许会想，为什么Linus Torvalds不把Linux代码放到版本控制系统里呢？不是有CVS、SVN这些免费的版本控制系统吗？因为CVS和SVN，这些集中式的版本控制系统不但速度慢，而且必须联网才能使用，所以他坚定地反对。但有一些商用的版本控制系统，虽然比CVS、SVN好用，但那是付费的，和Linux的开源精神不符。</p>
+<p>直到2002年，Linux系统已经发展了十年，代码库之大让Linus很难继续通过手工方式管理了，Linux社区的伙伴们也对这种方式表达了强烈不满，于是Linus选择了一个商业的版本控制系统BitKeeper，BitKeeper的开发商BitMover出于人道主义精神，授权Linux社区免费使用这个版本控制系统。</p>
+<p>然而，安定大好的局面在2005年被打破了，原因是Linux社区牛人聚集，开发Samba的Andrew试图破解BitKeeper的协议，不料被BitMover公司发现了，于是BitMover收回Linux社区的免费使用权。</p>
+<p>失去了这么好用的版本控制系统后，Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的源码已经由Git管理了！大牛就是大牛，开发效率没得说。</p>
+<p>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线后，并为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
+<p>历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2015/12/22/初识版本控制Git（－）/" data-id="cj3d9cd400014m86f44d1hbaa" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/30/记一次代码上线故障/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          记一次代码上线故障
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/30/MySQL数据表的增删改查操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">MySQL数据表的增删改查操作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Ancoka</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 Ancoka<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

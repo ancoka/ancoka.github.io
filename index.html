@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ancoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Thinking &amp;&amp; coding">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ancoka">
+<meta property="og:url" content="http://www.ucoolife.com/index.html">
+<meta property="og:site_name" content="Ancoka">
+<meta property="og:description" content="Thinking &amp;&amp; coding">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ancoka">
+<meta name="twitter:description" content="Thinking &amp;&amp; coding">
+  
+    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main">
+  
+    <article id="post-解决-Git-bash-在-windows-下中文乱码问题" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/" class="article-date">
+  <time class="post-time" datetime="2017-05-31T16:42:08.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/">解决 Git bash 在 windows 下中文乱码问题</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>在 Git 安装目录下，存在 etc 目录，需要修改该目录下的几个文件就可以正常显示中文。</strong></p>
+<ul>
+<li><p>编辑 /etc/gitconfig 文件（不存在则创建），文件末尾追加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[gui]</div><div class="line">encoding = utf-8          #代码库统一使用utf-8 </div><div class="line">[i18n]</div><div class="line">commitencoding = GB2312   #log编码</div><div class="line">[svn]</div><div class="line">pathnameencoding = GB2312 #支持中文路径</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/" data-id="cj3d9cd45001fm86flp0oqugc" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-bash/">Git bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-jQuery-实现复选框的全选与反选" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/jQuery-实现复选框的全选与反选/" class="article-date">
+  <time class="post-time" datetime="2017-05-31T16:37:06.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/jQuery-实现复选框的全选与反选/">jQuery 实现复选框的全选与反选</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>忽略了 HTML 部分代码，直接上 javascript 代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#check-all'</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.checked) &#123;</div><div class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">			$(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">			$(<span class="keyword">this</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	$(<span class="keyword">this</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.checked)&#123;</div><div class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length == $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</div><div class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length != $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</div><div class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">false</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2017/06/01/jQuery-实现复选框的全选与反选/" data-id="cj3d9cd3s000qm86f47r2vxya" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-二维数组递归调用生成-HTML-select列表" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/二维数组递归调用生成-HTML-select列表/" class="article-date">
+  <time class="post-time" datetime="2017-05-31T16:29:31.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/二维数组递归调用生成-HTML-select列表/">二维数组递归调用生成 HTML select列表</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  $data = [</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">1</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">0</span>, <span class="string">'dpath'</span> =&gt; <span class="number">1</span>, <span class="string">'name'</span> =&gt; <span class="string">'服装'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">2</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">1</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'男士服装'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">3</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">2</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'外套'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">4</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">2</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'裤子'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">5</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">0</span>, <span class="string">'dpath'</span> =&gt; <span class="number">1</span>, <span class="string">'name'</span> =&gt; <span class="string">'家用电器'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">6</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">5</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'冰箱'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">7</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">6</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'海尔冰箱'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">8</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">5</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'空调'</span>],</div><div class="line">	[<span class="string">'id'</span> =&gt; <span class="number">9</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">8</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'格力空调'</span>]</div><div class="line">];</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/01/二维数组递归调用生成-HTML-select列表/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2017/06/01/二维数组递归调用生成-HTML-select列表/" data-id="cj3d9cd3y0011m86f9bsrzbyd" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-sh-1-node-Permission-denied" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/30/sh-1-node-Permission-denied/" class="article-date">
+  <time class="post-time" datetime="2017-05-30T10:34:57.000Z" itemprop="datePublished">
+    <span class="post-month">5月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/30/sh-1-node-Permission-denied/">sh: 1: node: Permission denied</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nodejs/">Nodejs</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的博客是采用 hexo 搭建的，想着每次都要手动发布文章太过繁琐。作为程序员，懒是程序员的通病，凡事能程序解决的问题，就不要想手动解决。于是想到采用 Git 的 hooks 进行自动发布，说干就干，买了台服务器这就动手搞起。此处省略了 Git 服务搭建，想了解的请自行百度，这里直奔主题，开始安装 <a href="https://hexo.io/zh-cn" target="_blank" rel="external">hexo-cli</a>。这是在我的 <a href="http://www.vultr.com/?ref=6992738" target="_blank" rel="external">Vultr VPS </a> 上安装 <a href="https://hexo.io/zh-cn" target="_blank" rel="external">hexo-cli</a> 时候，发生的 “sh: 1: node: Permission denied” 错误信息。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/05/30/sh-1-node-Permission-denied/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2017/05/30/sh-1-node-Permission-denied/" data-id="cj3d9cd3u000um86fm8wiwesm" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Laravel-增加自定义全局函数" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/07/Laravel-增加自定义全局函数/" class="article-date">
+  <time class="post-time" datetime="2017-05-07T05:42:27.000Z" itemprop="datePublished">
+    <span class="post-month">5月</span><br/>
+    <span class="post-day">07</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/07/Laravel-增加自定义全局函数/">Laravel 增加自定义全局函数</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候我们需要给 Laravel 添加一些自定义全局函数。当然，我们可以直接修改 Laravel 的 Helpers.php 文件来实现（这是极其不推荐的）。接下来我们讨论以下两种实现方式：</p>
+<p>无论是以下哪种方式，都必须创建包含自定义函数的 PHP 文件</p>
+<ul>
+<li><p>方式一：修改 Laravel 根目录下 bootstrap/autoload.php 文件</p>
+</li>
+<li><p>方式二：修改 composer.json 的 autoload 配置，并更新 composer 的 autoload_files.php 文件</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/05/07/Laravel-增加自定义全局函数/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2017/05/07/Laravel-增加自定义全局函数/" data-id="cj3d9cd320000m86fwvz7csdu" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Git-tag命令的使用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/30/Git-tag命令的使用/" class="article-date">
+  <time class="post-time" datetime="2016-04-30T04:16:45.000Z" itemprop="datePublished">
+    <span class="post-month">4月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/30/Git-tag命令的使用/">Git tag命令的使用</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。</p>
+<h3>查看标签</h3>
+
+<ul>
+<li><p>列表所有标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag</div></pre></td></tr></table></figure>
+</li>
+<li><p>列出版本为1开头的标签</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -l &quot;1.*&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/30/Git-tag命令的使用/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/04/30/Git-tag命令的使用/" data-id="cj3d9cd380002m86f1rcrrpnr" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-微软将要添加Linux命令行到Windows-10系统" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/01/微软将要添加Linux命令行到Windows-10系统/" class="article-date">
+  <time class="post-time" datetime="2016-04-01T04:16:19.000Z" itemprop="datePublished">
+    <span class="post-month">4月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/01/微软将要添加Linux命令行到Windows-10系统/">微软将要添加Linux命令行到Windows 10系统</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/译文/">译文</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Windows将要迎来Bash Shell，对开发者，开发者，开发者来说是个大新闻。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">原文链接</td>
+<td style="text-align:left"><a href="https://www.theverge.com/2016/3/30/11331014/microsoft-windows-linux-ubuntu-bash" target="_blank" rel="external">Microsoft is adding the Linux command line to Windows 10</a></td>
+</tr>
+<tr>
+<td style="text-align:left">原文作者</td>
+<td style="text-align:left"><a href="https://www.theverge.com/users/ChrisWelch" target="_blank" rel="external">Chris Welch</a></td>
+</tr>
+<tr>
+<td style="text-align:left">译者</td>
+<td style="text-align:left"><a href="https://github.com/ancoka" target="_blank" rel="external">Ancoka</a></td>
+</tr>
+<tr>
+<td style="text-align:left">校对者</td>
+<td style="text-align:left"><a href="https://github.com/ancoka" target="_blank" rel="external">Ancoka</a></td>
+</tr>
+</tbody>
+</table>
+<embed src="https://player.youku.com/player.php/sid/XMjc5Mzc0ODQ2MA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+        
+          <p class="article-more-link">
+            <a href="/2016/04/01/微软将要添加Linux命令行到Windows-10系统/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/04/01/微软将要添加Linux命令行到Windows-10系统/" data-id="cj3d9cd42001cm86fz3fbdfdn" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-启动Nginx服务提示98-Address-already-in-use" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/" class="article-date">
+  <time class="post-time" datetime="2016-03-31T04:15:57.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">31</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/">启动Nginx服务提示98: Address already in use</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB-服务器/">WEB 服务器</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今日早晨去到公司，就被其他人告知官网所有页面打开都是502。平常都是正常的怎么就突然页面就502了呢，下面就开始 troubleshooting。</p>
+<p>公司web服务器，是搭建在 centos 上的lnmp环境，首先网站502肯定是服务器端错误，首先想到是不是nginx服务挂掉了，然后执行service nginx status，查看下nginx的状态：nginx is stopped，果然是nginx服务挂了。执行service nginx start启动nginx服务，无法开启，提示错误如下：</p>
+<p>Starting nginx: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use) nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] still could not bind()</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/03/31/启动Nginx服务提示98-Address-already-in-use/" data-id="cj3d9cd410018m86fbkafu0yx" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-记一次代码上线故障" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/30/记一次代码上线故障/" class="article-date">
+  <time class="post-time" datetime="2016-03-30T04:15:24.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">30</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/30/记一次代码上线故障/">记一次代码上线故障</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/分享/">分享</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>项目采用 Git 将项目上线之后，需要安装 Laravel 框架，及在开发过程中的一些第三发扩展，上线之后，使用 composer install 安装项目，发现未完整安装整个扩展，然后直接执行 composer update 进行更新安装，结果出现：</p>
+<p> <img src="http://oqqufn3yq.bkt.clouddn.com/1459270581180095.png" alt="图1"></p>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/30/记一次代码上线故障/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/03/30/记一次代码上线故障/" data-id="cj3d9cd4a001km86f50a0y7qq" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-初识版本控制Git（－）" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/22/初识版本控制Git（－）/" class="article-date">
+  <time class="post-time" datetime="2015-12-22T02:51:13.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">22</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/22/初识版本控制Git（－）/">初识版本控制Git（－）</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3>Git是什么?</h3>
+
+<p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目及有效且高速的处理从很小到非常大的项目版本管理。</p>
+<h3>什么是版本控制 ?</h3>
+
+<p>版本控制系统其实就是，通过文档控制，记录程序各个模块的改动，并且为之编上序号记录下来。以便日后因某次错误提交，可以实现快速会滚至修改前的内容。并且版本控制可以实现多人协作功能，使多人在一个项目上做不同的内容而且互不影响。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/22/初识版本控制Git（－）/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2015/12/22/初识版本控制Git（－）/" data-id="cj3d9cd400014m86f44d1hbaa" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Ancoka</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 Ancoka<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

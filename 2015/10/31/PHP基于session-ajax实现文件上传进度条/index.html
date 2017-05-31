@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP基于session+ajax实现文件上传进度条 | Ancoka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、场景及方案介绍  Web应用中常常需要提供文件上传功能，典型的应用场景有用户头像、相册照片上传等。当要上传的文件比较大的时候，为了更好的用户体验，显示文件上传进度是必要。 在PHP5.4之前，php实现文件上传进度条，主要有三种方法：  使用flash、java、activeX 使用PHP的APC扩展 使用HTML5的FILE API">
+<meta name="keywords" content="PHP,AJAX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP基于session+ajax实现文件上传进度条">
+<meta property="og:url" content="http://www.ucoolife.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/index.html">
+<meta property="og:site_name" content="Ancoka">
+<meta property="og:description" content="一、场景及方案介绍  Web应用中常常需要提供文件上传功能，典型的应用场景有用户头像、相册照片上传等。当要上传的文件比较大的时候，为了更好的用户体验，显示文件上传进度是必要。 在PHP5.4之前，php实现文件上传进度条，主要有三种方法：  使用flash、java、activeX 使用PHP的APC扩展 使用HTML5的FILE API">
+<meta property="og:updated_time" content="2017-05-29T18:25:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP基于session+ajax实现文件上传进度条">
+<meta name="twitter:description" content="一、场景及方案介绍  Web应用中常常需要提供文件上传功能，典型的应用场景有用户头像、相册照片上传等。当要上传的文件比较大的时候，为了更好的用户体验，显示文件上传进度是必要。 在PHP5.4之前，php实现文件上传进度条，主要有三种方法：  使用flash、java、activeX 使用PHP的APC扩展 使用HTML5的FILE API">
+  
+    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-PHP基于session-ajax实现文件上传进度条" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/31/PHP基于session-ajax实现文件上传进度条/" class="article-date">
+  <time class="post-time" datetime="2015-10-30T16:48:01.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br/>
+    <span class="post-day">31</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP基于session+ajax实现文件上传进度条
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3>一、场景及方案介绍</h3>
+
+<p>Web应用中常常需要提供文件上传功能，典型的应用场景有用户头像、相册照片上传等。当要上传的文件比较大的时候，为了更好的用户体验，显示文件上传进度是必要。</p>
+<p>在PHP5.4之前，php实现文件上传进度条，主要有三种方法：</p>
+<ul>
+<li>使用flash、java、activeX</li>
+<li>使用PHP的APC扩展</li>
+<li>使用HTML5的FILE API</li>
+</ul>
+<a id="more"></a>
+<p>第一种方法依赖第三方的浏览器插件，通用性不好，并且存在安全隐患。不过由于flash的使用范围较广，因此很多网站使用flash作为解决方案。<br>第二种方法不足在于需要安装PHP的PAC扩展库，要求用户能够控制服务器的配置。<br>第三中方法应该是最理想的方法，不需要服务器的支持，仅仅在浏览器使用JavaScript即可。但由于HTML5标准尚未完全确立，各个浏览器的支持不同，所以这种方法不能大规模使用。</p>
+<p>在PHP5.4版本中引入基于session的上传进度监视功能（session.upload.progress）,是一种服务器端文件上传进度解决方案。可以不用安装APC扩展，使用原生的PHP加ajax即可实现上传进度条。这里使用的是session+jQuery ajax实现。</p>
+<h3>二、原理介绍</h3>
+
+<p>当浏览器向服务器上传一个文件时，PHP会吧此文件上传的详细信息（上传时间、进度）存储在session中。跟随上传的进行，周期的更新session中的信息。浏览器可以使用ajax周期的请求服务器端脚本，取得session中的进度信息，从而客户端显示进度条。</p>
+<p>文件上传信息要存储在session中，需要在php.ini的配置文件中进行以下设置：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">session.upload_progress.enabled = On</div><div class="line"></div><div class="line">session.upload_progress.cleanup = On</div><div class="line"></div><div class="line">session.upload_progress.prefix = “upload_progress_”</div><div class="line"></div><div class="line">session.upload_progress.name = “PHP_SESSION_UPLOAD_PROGRESS”</div><div class="line"></div><div class="line">session.upload_progress.freq =  “<span class="number">1</span>%”</div><div class="line"></div><div class="line">session.upload_progress.min_freq = “<span class="number">1</span>”</div></pre></td></tr></table></figure>
+<p>其中，enabled控制upload_progress功能开启与关闭，默认开启；cleanup设置当文件上传请求提交完成后，是否清除session相关信息，默认开启;prefix和name分别设置进度信息在session中存储的变量名和键名；freq和min_freq，两项用来设置服务器对进度的更新频率。合理的配置可以减轻服务器的负载。<br>另外在文件上传表单中，需要为该上传设置一个标识符，并在接下来的过程中使用该标识符来引用进度信息。具体操作，在上传表单中添加一个隐藏域，它的name属性为php.ini中的session.upload_progress.name的值。该隐藏域的值是一个你自己定义的标识符，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=”hidden” name=”<span class="meta">&lt;?php</span> <span class="keyword">echo</span> ini_get(‘session.upload_progress.name’); <span class="meta">?&gt;</span>”</div><div class="line">value=”test” /&gt;</div></pre></td></tr></table></figure>
+<p>接着文件上传的表单后，PHP会在$_SESSION变量中新建键，键名是一个将session.upload_progress.prifix的值与上面你所定义的标识符连接后的字符串，可以通过以下代码得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$i = ini_get(‘session.upload_progress.name’);</div><div class="line">$key = ini_get(‘session.upload_progress.prefix’).$_POST[$i];</div><div class="line">$_SESSION[$key];</div></pre></td></tr></table></figure>
+<p>SESSION[SESSION[key]的变量结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$_SESSION[‘upload_progress_test’] = array(</div><div class="line">    “start_time” =&gt; 1234567890,      //开始时间</div><div class="line">    “content_length” =&gt; 57343257,    //POST请求的总数据长度</div><div class="line">    “bytes_processed” =&gt; 453489,     //已收到的数据长度</div><div class="line">    “done” =&gt; false,                 //请求是否完成，true表示完成，false表示未完成</div><div class="line">    “files” =&gt; array(                //文件信息</div><div class="line">        0 =&gt; array(…),  </div><div class="line">        1 =&gt; array(…),               //同一请求中包含多个文件</div><div class="line">    ),</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>通过$_SEESION中的conten_length和bytes_processed可以求出文件上传百分比。</p>
+<p></p><h3>三、具体实现</h3><br>index.php表单内容如下：（注意在文件最前面使用session_start()开启session）<p></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">&lt;div id="article"&gt;</div><div class="line">    &lt;form action="upload.php" method="POST" id="upload-form" enctype="multipart/form-data" target="hidden-iframe"&gt;</div><div class="line">        &lt;input type="hidden" value="test" name="&lt;?php echo ini_get('session.upload_progress.name');?&gt;"&gt;</div><div class="line">        &lt;p&gt;&lt;input type="file" name="file1"&gt;&lt;/p&gt;</div><div class="line">        &lt;p&gt;&lt;input type="submit" value="上传"&gt;&lt;/p&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;div id="progress" class="progress" style="margin-bottom: 15px; display: none;"&gt;</div><div class="line">            &lt;div class="bar" style="width: 0%;"&gt;&lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div class="handle"&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class="label"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;iframe id="hidden-iframe" name="hidden-iframe" src="about:blank" style="display: none;"&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
+<p>此处表单中session.upload_progress.name隐藏域的值设为了test。表单中可以添加多个文件上传表单，如果需要的话。还有就是，表单的target属性，指向了当前页面的一个隐藏iframe,作用是防止提交表单后页面跳转。<br>id为progress这个div是用来你显示进度条的。<br>处理文件上传的文件时upload.php，与通常文件上传操作没有什么不同：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">if</span> (is_uploaded_file($_FILES[<span class="string">'file1'</span>][<span class="string">'tmp_name'</span>])) &#123;</div><div class="line">    move_uploaded_file($_FILES[<span class="string">'file1'</span>][<span class="string">'tmp_name'</span>], <span class="string">"./&#123; $_FILES['file1']['name'] &#125;"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用ajax获取进度信息：这是最为关键的一步，需要建立progress.php文件，读取session中的信息；然后在index.php增加js代码，向progress.php发起ajax请求，根据获取的进度信息更新进度条。progress.php的代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">session_start();</div><div class="line">$i = ini_get(<span class="string">'session.upload_progress.name'</span>);</div><div class="line">$key = ini_get(<span class="string">'session.upload_progress.prefix'</span>) . $_GET[$i];</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>($_SESSION[$key])) &#123;</div><div class="line">    $current = $_SESSION[$key][<span class="string">'bytes_processed'</span>];</div><div class="line">    $total   = $_SESSION[$key][<span class="string">'content_length'</span>];</div><div class="line">    <span class="keyword">echo</span> $current &lt; $total ? ceil($current / $total * <span class="number">100</span>) : <span class="number">100</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="number">100</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后在index.php中加入如下js代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fetch_progress</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            $.get(<span class="string">'progress.php'</span>, &#123; <span class="string">'&lt;?php echo ini_get("session.upload_progress.name");?&gt;'</span>: <span class="string">'test'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> progress = <span class="built_in">parseInt</span>(data);</div><div class="line">                $(<span class="string">'.handle'</span>).show().css(<span class="string">'left'</span>, <span class="number">2</span> * progress + <span class="string">'px'</span>);</div><div class="line">                $(<span class="string">'.label'</span>).html(progress + <span class="string">'%'</span>);</div><div class="line">                $(<span class="string">'#progress .bar'</span>).css(<span class="string">'width'</span>, <span class="number">2</span> * progress + <span class="string">'px'</span>);</div><div class="line">                <span class="keyword">if</span> (progress &lt; <span class="number">100</span>) &#123;</div><div class="line">                    setTimeout(<span class="string">'fetch_progress()'</span>, <span class="number">1</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    $(<span class="string">'.label'</span>).html(<span class="string">'上传完成'</span>);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        $(<span class="string">'#upload-form'</span>).submit(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            $(<span class="string">'#progress'</span>).show();</div><div class="line">            setTimeout(<span class="string">'fetch_progress()'</span>, <span class="number">1</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/" data-id="cj3d9cd3n000gm86f4gnfdgxs" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/31/Yii实现数据分页/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Yii实现数据分页
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">Ancoka</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">Ancoka</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>10</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>23</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 Ancoka<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
