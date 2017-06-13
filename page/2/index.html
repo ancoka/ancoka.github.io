@@ -41,9 +41,9 @@
     <h2 class="author">Ancoka</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>24</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -72,6 +72,67 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-启动Nginx服务提示98-Address-already-in-use" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/" class="article-date">
+  <time class="post-time" datetime="2016-03-31T04:15:57.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">31</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/">启动Nginx服务提示98: Address already in use</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB-服务器/">WEB 服务器</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今日早晨去到公司，就被其他人告知官网所有页面打开都是502。平常都是正常的怎么就突然页面就502了呢，下面就开始 troubleshooting。</p>
+<p>公司web服务器，是搭建在 centos 上的lnmp环境，首先网站502肯定是服务器端错误，首先想到是不是nginx服务挂掉了，然后执行service nginx status，查看下nginx的状态：nginx is stopped，果然是nginx服务挂了。执行service nginx start启动nginx服务，无法开启，提示错误如下：</p>
+<p>Starting nginx: nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use) nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<br>nginx: [emerg] still could not bind()</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/31/启动Nginx服务提示98-Address-already-in-use/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.ucoolife.com/2016/03/31/启动Nginx服务提示98-Address-already-in-use/" data-id="cj3vqwv30001hcl6f703gxq5f" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-记一次代码上线故障" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -122,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2016/03/30/记一次代码上线故障/" data-id="cj3iwa1ef001pdi6f7wtbrcjw" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2016/03/30/记一次代码上线故障/" data-id="cj3vqwv34001pcl6fy2vqeq17" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -186,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/12/22/初识版本控制Git（－）/" data-id="cj3iwa1eb001kdi6f65rxnbhu" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/12/22/初识版本控制Git（－）/" data-id="cj3vqwv2s001dcl6f5gp7a1e6" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
@@ -249,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/30/MySQL数据表的增删改查操作/" data-id="cj3iwa1dk000bdi6fvw00ypwa" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/30/MySQL数据表的增删改查操作/" data-id="cj3vqwv25000hcl6ft4cj3uyf" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -309,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/29/shell脚本实现mysql数据库自动备份/" data-id="cj3iwa1e00013di6f5e0s7f93" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/29/shell脚本实现mysql数据库自动备份/" data-id="cj3vqwv2l0016cl6f8hmkd5fv" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计划任务/">计划任务</a></li></ul>
@@ -369,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/24/PHP实现数据的加解密/" data-id="cj3iwa1dl000ddi6fe0ki6omz" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/24/PHP实现数据的加解密/" data-id="cj3vqwv27000jcl6fxbkm3bxp" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对称加密/">对称加密</a></li></ul>
@@ -428,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/22/Linux服务器实现无密登陆/" data-id="cj3iwa1dd0006di6fsbjambvb" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/22/Linux服务器实现无密登陆/" data-id="cj3vqwv1u0008cl6fam1ki9pe" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
@@ -493,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/14/Mac-OSX系统上brew的安装及使用/" data-id="cj3iwa1df0007di6fg55enevo" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/14/Mac-OSX系统上brew的安装及使用/" data-id="cj3vqwv1y000ccl6fi4w5tf5j" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/homebrew/">homebrew</a></li></ul>
@@ -554,7 +615,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/11/12/MySQL基础知识总结/" data-id="cj3iwa1dg0008di6fksr70qqs" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/11/12/MySQL基础知识总结/" data-id="cj3vqwv1x0009cl6f1tcw2b0t" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -615,68 +676,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/10/31/Yii无限级分类实现下拉列表效果/" data-id="cj3iwa1dw000tdi6fn821mgco" class="article-share-link">分享</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-Yii实现数据分页" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/31/Yii实现数据分页/" class="article-date">
-  <time class="post-time" datetime="2015-10-30T18:25:42.000Z" itemprop="datePublished">
-    <span class="post-month">10月</span><br/>
-    <span class="post-day">31</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/31/Yii实现数据分页/">Yii实现数据分页</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因公司在使用yii框架进程网站开发，前段时间在开发中遇到数据分页问题，在此整理了下yii两种分页方式的实现代码。</p>
-<p>第一种：CListView分页（针对对象形式的数据分页）<br>【controler】代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionIndex</span><span class="params">()</span> </span>&#123;</div><div class="line">    $criteria = <span class="keyword">new</span> CDbCriteria();</div><div class="line">    $criteria-&gt;order = ‘rid ASC<span class="string">';</span></div><div class="line">    $dataProvider = new CActiveDataProvider(‘RobotModel’,array(</div><div class="line">        ‘pagination’ =&gt; array(</div><div class="line">            ‘pageSize’ =&gt; Yii::app()-&gt;params[‘pagesize’],</div><div class="line">            ‘pageVar’ =&gt; Yii::app()-&gt;params[‘pagevar’],</div><div class="line">        ),</div><div class="line">        ‘criteria’ =&gt; $criteria,</div><div class="line">    ));</div><div class="line">    </div><div class="line">    $this-&gt;render(‘index’,array(</div><div class="line">        ‘dataProvider’ =&gt; $dataProvider,</div><div class="line">    ));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2015/10/31/Yii实现数据分页/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.ucoolife.com/2015/10/31/Yii实现数据分页/" data-id="cj3iwa1du000pdi6fu3vizz3f" class="article-share-link">分享</a>
+      <a data-url="http://www.ucoolife.com/2015/10/31/Yii无限级分类实现下拉列表效果/" data-id="cj3vqwv2a000ocl6fiviya7l9" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
@@ -738,9 +738,9 @@
     <h2 class="author">Ancoka</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>24</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
 
 
