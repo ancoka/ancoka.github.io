@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>MySQL基础知识总结 | Ancoka</title>
+  <title>MySQL基础知识总结 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、mysql数据库查看相关信息的语句  1234567891011121314151617181920212223242526272829303132-- 查看数据库的版本号SELECT VERSION();-- 产看当前用户SELECT USER(),CURRENT_USER();-- 查看当前正在使用的数据库SELECT DATABASE();-- 查看当前日期SELECT CURDATE(">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基础知识总结">
 <meta property="og:url" content="http://blog.ancoka.com/2015/11/12/MySQL基础知识总结/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="一、mysql数据库查看相关信息的语句  1234567891011121314151617181920212223242526272829303132-- 查看数据库的版本号SELECT VERSION();-- 产看当前用户SELECT USER(),CURRENT_USER();-- 查看当前正在使用的数据库SELECT DATABASE();-- 查看当前日期SELECT CURDATE(">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-30T03:19:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL基础知识总结">
 <meta name="twitter:description" content="一、mysql数据库查看相关信息的语句  1234567891011121314151617181920212223242526272829303132-- 查看数据库的版本号SELECT VERSION();-- 产看当前用户SELECT USER(),CURRENT_USER();-- 查看当前正在使用的数据库SELECT DATABASE();-- 查看当前日期SELECT CURDATE(">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-MySQL基础知识总结" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MySQL基础知识总结" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/12/MySQL基础知识总结/" class="article-date">
   <time class="post-time" datetime="2015-11-12T02:49:13.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
+    <span class="post-month">11月</span><br>
     <span class="post-day">12</span>
   </time>
 </a>
@@ -111,17 +112,17 @@
       
         <h3>一、mysql数据库查看相关信息的语句</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">-- 查看数据库的版本号</div><div class="line">SELECT VERSION();</div><div class="line">-- 产看当前用户</div><div class="line">SELECT USER(),CURRENT_USER();</div><div class="line">-- 查看当前正在使用的数据库</div><div class="line">SELECT DATABASE();</div><div class="line">-- 查看当前日期</div><div class="line">SELECT CURDATE(),CURRENT_DATE();</div><div class="line">-- 查看当前的时间</div><div class="line">SELECT CURTIME(),CURRENT_TIME();</div><div class="line">-- 查看当前的时间戳</div><div class="line">SELECT NOW(),CURRENT_TIMESTAMP();</div><div class="line">-- 查看mysql支持的所有的字符编码</div><div class="line">SHOW CHARSET;</div><div class="line">-- 查看以s开头的字符编码</div><div class="line">SHOW CHARSET LIKE &apos;s%&apos;; </div><div class="line">-- 查看变量名为char开头的变量</div><div class="line">SHOW VARIABLES LIKE &apos;char%&apos;;</div><div class="line">-- 查看数据库支持的所有引擎</div><div class="line">SHOW ENGINES;</div><div class="line">-- 查看所有的数据库</div><div class="line">SHOW DATABASES;</div><div class="line">-- 查看所有的表</div><div class="line">SHOW TABLES;</div><div class="line">-- 查看标准建库语句</div><div class="line">SHOW CREATE DATABASE tableName;</div><div class="line">-- 查看标准的建表语句</div><div class="line">SHOW CREATE TABLE tableName;</div><div class="line">-- 查看表的所有字段信息</div><div class="line">SHOW FULL COLUMNS FROM tableName;</div><div class="line">-- 查看表结构[DESCRIBE的缩写:DESC</div><div class="line">DESC tableName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">-- 查看数据库的版本号</span><br><span class="line">SELECT VERSION();</span><br><span class="line">-- 产看当前用户</span><br><span class="line">SELECT USER(),CURRENT_USER();</span><br><span class="line">-- 查看当前正在使用的数据库</span><br><span class="line">SELECT DATABASE();</span><br><span class="line">-- 查看当前日期</span><br><span class="line">SELECT CURDATE(),CURRENT_DATE();</span><br><span class="line">-- 查看当前的时间</span><br><span class="line">SELECT CURTIME(),CURRENT_TIME();</span><br><span class="line">-- 查看当前的时间戳</span><br><span class="line">SELECT NOW(),CURRENT_TIMESTAMP();</span><br><span class="line">-- 查看mysql支持的所有的字符编码</span><br><span class="line">SHOW CHARSET;</span><br><span class="line">-- 查看以s开头的字符编码</span><br><span class="line">SHOW CHARSET LIKE &apos;s%&apos;; </span><br><span class="line">-- 查看变量名为char开头的变量</span><br><span class="line">SHOW VARIABLES LIKE &apos;char%&apos;;</span><br><span class="line">-- 查看数据库支持的所有引擎</span><br><span class="line">SHOW ENGINES;</span><br><span class="line">-- 查看所有的数据库</span><br><span class="line">SHOW DATABASES;</span><br><span class="line">-- 查看所有的表</span><br><span class="line">SHOW TABLES;</span><br><span class="line">-- 查看标准建库语句</span><br><span class="line">SHOW CREATE DATABASE tableName;</span><br><span class="line">-- 查看标准的建表语句</span><br><span class="line">SHOW CREATE TABLE tableName;</span><br><span class="line">-- 查看表的所有字段信息</span><br><span class="line">SHOW FULL COLUMNS FROM tableName;</span><br><span class="line">-- 查看表结构[DESCRIBE的缩写:DESC</span><br><span class="line">DESC tableName;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3>二、数据库相关操作</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">-- 创建数据库，名字可以是关键字.主要作用:增强兼容性</div><div class="line">CREATE DATABASE databaseName;</div><div class="line">CREATE DATABASE databaseName;</div><div class="line">CREATE DATABASE IF NOT EXISTS databaseName DEFAULT CHARSET=utf8;</div><div class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET utf8 */;</div><div class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET gbk */;</div><div class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET gb2312 */;</div><div class="line">-- 选择数据库</div><div class="line">USE databaseName;</div><div class="line">-- 删除数据库</div><div class="line">DROP DATABASE IF EXISTS databaseName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-- 创建数据库，名字可以是关键字.主要作用:增强兼容性</span><br><span class="line">CREATE DATABASE databaseName;</span><br><span class="line">CREATE DATABASE databaseName;</span><br><span class="line">CREATE DATABASE IF NOT EXISTS databaseName DEFAULT CHARSET=utf8;</span><br><span class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET utf8 */;</span><br><span class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET gbk */;</span><br><span class="line">CREATE DATABASE databaseName /*!40100 DEFAULT CHARACTER SET gb2312 */;</span><br><span class="line">-- 选择数据库</span><br><span class="line">USE databaseName;</span><br><span class="line">-- 删除数据库</span><br><span class="line">DROP DATABASE IF EXISTS databaseName;</span><br></pre></td></tr></table></figure>
 <h3>三、数据表相关操纵</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">-- 标准建表语句</div><div class="line">CREATE TABLE IF NOT EXISTS tableName(</div><div class="line">    列名，类型，修饰，约束</div><div class="line">    id INT(10) UNSIGNED ZEROFILL PRIMARY KEY AUTO_INCREMENT</div><div class="line">)ENGINE=MYISAM DEFAULT CHARSET=utf8;</div><div class="line">-- 快速建表，以表名为tableName的表为模板建立相同结构相同约束的表，无数据</div><div class="line">CREATE TABLE tableName2 LIKE tableName;</div><div class="line">-- 快速建表 以tableName查询的数据新建一个表，没有约束</div><div class="line">CREATE TABLE aa SELECT * FROM tableName;</div><div class="line">-- 删除一个表</div><div class="line">DROP TABLE IF EXISTS tableName;</div><div class="line">-- 删除多个表</div><div class="line">DROP TABLE IF EXISTS tableName1,tableName2,tableName3;</div><div class="line">-- 修改表名称</div><div class="line">RENAME TABLE tableName1 TO tableName2;</div><div class="line">ALTER TABLE tableName1 RENAME tableName2;</div><div class="line">ALTER TABLE tableName1 RENAME TO tableName2;</div><div class="line">-- 修改表的列名和类型</div><div class="line">ALTER TABLE tableName CHANGE columnName columnName2 VARCHAR(20);</div><div class="line">-- 删除主键(前提是主键没有自增字段，若主键自增先去除auto_increment)</div><div class="line">ALTER TABLE tableName DROP PRIMARY KEY;</div><div class="line">-- 添加主键</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT pk PRIMARY KEY(columnName);</div><div class="line">-- 新增字段</div><div class="line">ALTER TABLE tableName ADD COLUMN columnName;</div><div class="line">ALTER TABLE tableName ADD COLUMN columnName1 AFTER columnName2;</div><div class="line">ALTER TABLE tableName ADD COLUMN columnName FIRST;</div><div class="line">-- 删除字段</div><div class="line">ALTER TABLE tableName DROP COLUMN columnName;</div><div class="line">-- 添加外键约束(字段必须存在，且类型和修饰相同)</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName);</div><div class="line">-- 删除外键关联时，相关的内容设为空</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE SET NULL;</div><div class="line">-- 删除外键关联时，删除相关的数据</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE CASCADE;</div><div class="line">-- 更新外键关联时，更新相关的内容</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON UPDATE CASCADE;</div><div class="line">-- 删除设空，修改更新</div><div class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE SET NULL ON UPDATE CASCADE;</div><div class="line"></div><div class="line">/****</div><div class="line">上面的ON DELETE SET NULL：外键设为空</div><div class="line">上面的ON DELETE/UPDATE CASCADE：外键级联</div><div class="line">注意：使用外键约束时，数据表的存储引擎为INNODB</div><div class="line">****/</div><div class="line">-- 删除外键</div><div class="line">ALTER TABLE tableName DROP FOREIGN KEY fk;</div><div class="line">-- 截断表内数据，重新插入主键从开始自增</div><div class="line">TRUNCATE tableName</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">-- 标准建表语句</span><br><span class="line">CREATE TABLE IF NOT EXISTS tableName(</span><br><span class="line">    列名，类型，修饰，约束</span><br><span class="line">    id INT(10) UNSIGNED ZEROFILL PRIMARY KEY AUTO_INCREMENT</span><br><span class="line">)ENGINE=MYISAM DEFAULT CHARSET=utf8;</span><br><span class="line">-- 快速建表，以表名为tableName的表为模板建立相同结构相同约束的表，无数据</span><br><span class="line">CREATE TABLE tableName2 LIKE tableName;</span><br><span class="line">-- 快速建表 以tableName查询的数据新建一个表，没有约束</span><br><span class="line">CREATE TABLE aa SELECT * FROM tableName;</span><br><span class="line">-- 删除一个表</span><br><span class="line">DROP TABLE IF EXISTS tableName;</span><br><span class="line">-- 删除多个表</span><br><span class="line">DROP TABLE IF EXISTS tableName1,tableName2,tableName3;</span><br><span class="line">-- 修改表名称</span><br><span class="line">RENAME TABLE tableName1 TO tableName2;</span><br><span class="line">ALTER TABLE tableName1 RENAME tableName2;</span><br><span class="line">ALTER TABLE tableName1 RENAME TO tableName2;</span><br><span class="line">-- 修改表的列名和类型</span><br><span class="line">ALTER TABLE tableName CHANGE columnName columnName2 VARCHAR(20);</span><br><span class="line">-- 删除主键(前提是主键没有自增字段，若主键自增先去除auto_increment)</span><br><span class="line">ALTER TABLE tableName DROP PRIMARY KEY;</span><br><span class="line">-- 添加主键</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT pk PRIMARY KEY(columnName);</span><br><span class="line">-- 新增字段</span><br><span class="line">ALTER TABLE tableName ADD COLUMN columnName;</span><br><span class="line">ALTER TABLE tableName ADD COLUMN columnName1 AFTER columnName2;</span><br><span class="line">ALTER TABLE tableName ADD COLUMN columnName FIRST;</span><br><span class="line">-- 删除字段</span><br><span class="line">ALTER TABLE tableName DROP COLUMN columnName;</span><br><span class="line">-- 添加外键约束(字段必须存在，且类型和修饰相同)</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName);</span><br><span class="line">-- 删除外键关联时，相关的内容设为空</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE SET NULL;</span><br><span class="line">-- 删除外键关联时，删除相关的数据</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE CASCADE;</span><br><span class="line">-- 更新外键关联时，更新相关的内容</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON UPDATE CASCADE;</span><br><span class="line">-- 删除设空，修改更新</span><br><span class="line">ALTER TABLE tableName ADD CONSTRAINT fk FOREIGN KEY (columnName) REFERENCES tec(columnName) ON DELETE SET NULL ON UPDATE CASCADE;</span><br><span class="line"></span><br><span class="line">/****</span><br><span class="line">上面的ON DELETE SET NULL：外键设为空</span><br><span class="line">上面的ON DELETE/UPDATE CASCADE：外键级联</span><br><span class="line">注意：使用外键约束时，数据表的存储引擎为INNODB</span><br><span class="line">****/</span><br><span class="line">-- 删除外键</span><br><span class="line">ALTER TABLE tableName DROP FOREIGN KEY fk;</span><br><span class="line">-- 截断表内数据，重新插入主键从开始自增</span><br><span class="line">TRUNCATE tableName</span><br></pre></td></tr></table></figure>
 <h3>四、索引相关操作</h3>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-- 一般情况下，建立表时如果建立pk(主键)、fk(外键)、uk(唯一约束键) 数据库系统会自动的建立索引，索引的作用：数据量很大时可以提高检索速度</div><div class="line">-- 创建索引</div><div class="line">CREATE INDEX indexName ON tableName(columnName DESC);</div><div class="line">ALTER TABLE tableName ADD INDEX indexName(columnName DESC);</div><div class="line">-- 删除索引</div><div class="line">DROP INDEX indexName ON tableName;</div><div class="line">ALTER TABLE tableName DROP INDEX indexName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- 一般情况下，建立表时如果建立pk(主键)、fk(外键)、uk(唯一约束键) 数据库系统会自动的建立索引，索引的作用：数据量很大时可以提高检索速度</span><br><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX indexName ON tableName(columnName DESC);</span><br><span class="line">ALTER TABLE tableName ADD INDEX indexName(columnName DESC);</span><br><span class="line">-- 删除索引</span><br><span class="line">DROP INDEX indexName ON tableName;</span><br><span class="line">ALTER TABLE tableName DROP INDEX indexName;</span><br></pre></td></tr></table></figure>
 <h3>五、MySQL的常用数据类型</h3>
 
 <p>数值类型</p>
@@ -172,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2015/11/12/MySQL基础知识总结/" data-id="cjd1v4k1y000epv6f1m32cz4n" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/11/12/MySQL基础知识总结/" data-id="cjrcxfjdm00097t6fgo8g9bcz" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -212,7 +213,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -245,10 +246,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -294,7 +295,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>MySQL数据表的增删改查操作 | Ancoka</title>
+  <title>MySQL数据表的增删改查操作 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="mysql表的常用操作，即INSERT插入数据操作、DELETE删除数据操作、UPDATE修改数据操作、SELECT查询数据操作，及常见的表查询条件使用。 INSERT插入数据操作INSERT INTO tableName (field1,field2,…) values (value1,value2,…); DELETE删除数据操作DELETE FROM tableName WHERE cond">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL数据表的增删改查操作">
 <meta property="og:url" content="http://blog.ancoka.com/2015/11/30/MySQL数据表的增删改查操作/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="mysql表的常用操作，即INSERT插入数据操作、DELETE删除数据操作、UPDATE修改数据操作、SELECT查询数据操作，及常见的表查询条件使用。 INSERT插入数据操作INSERT INTO tableName (field1,field2,…) values (value1,value2,…); DELETE删除数据操作DELETE FROM tableName WHERE cond">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-30T03:54:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据表的增删改查操作">
 <meta name="twitter:description" content="mysql表的常用操作，即INSERT插入数据操作、DELETE删除数据操作、UPDATE修改数据操作、SELECT查询数据操作，及常见的表查询条件使用。 INSERT插入数据操作INSERT INTO tableName (field1,field2,…) values (value1,value2,…); DELETE删除数据操作DELETE FROM tableName WHERE cond">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-MySQL数据表的增删改查操作" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MySQL数据表的增删改查操作" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/30/MySQL数据表的增删改查操作/" class="article-date">
   <time class="post-time" datetime="2015-11-30T02:50:44.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
+    <span class="post-month">11月</span><br>
     <span class="post-day">30</span>
   </time>
 </a>
@@ -117,19 +118,19 @@
 <h3>下面主要讲解mysql的查询操作的条件：</h3>
 
 <p>IS NULL 或 IS NOT NULL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName WHERE field (IS NULL|IS NOT NULL);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName WHERE field (IS NULL|IS NOT NULL);</span><br></pre></td></tr></table></figure>
 <p>IN() 在…范围内 或 NOT IN()不在…范围内</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName WHERE field IN(value1,value2,...);</div><div class="line">SELECT * FROM tableName WHERE field NOT IN(value1,value2,...);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName WHERE field IN(value1,value2,...);</span><br><span class="line">SELECT * FROM tableName WHERE field NOT IN(value1,value2,...);</span><br></pre></td></tr></table></figure>
 <p>BETWEEN AND 在…之间 或 NOT BETWEEN AND 不在…之间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName WHERE field BETWEEN value1 AND value2;</div><div class="line">SELECT * FROM tableName WHERE field NOT BETWEEN value1 AND value2;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName WHERE field BETWEEN value1 AND value2;</span><br><span class="line">SELECT * FROM tableName WHERE field NOT BETWEEN value1 AND value2;</span><br></pre></td></tr></table></figure>
 <p>NOT 取反运算符 ADN 与运算符 OR 或运算符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName WHERE field1 = value1 OR field2 = value2;</div><div class="line">SELECT * FROM tableName WHERE field1 = value1 AND field2 = value2;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName WHERE field1 = value1 OR field2 = value2;</span><br><span class="line">SELECT * FROM tableName WHERE field1 = value1 AND field2 = value2;</span><br></pre></td></tr></table></figure>
 <p>排序操作 DESC代表降序排序，ASC代表升序排序，默认升序排序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName ORDER BY field DESC;</div><div class="line">SELECT * FROM tableName ORDER BY field ASC;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName ORDER BY field DESC;</span><br><span class="line">SELECT * FROM tableName ORDER BY field ASC;</span><br></pre></td></tr></table></figure>
 <p>LIMIT 限制结果显示行数(用法：LIMIT 5 显示5行 或 LIMIT 0,5 从0位置开始显示5行,0代表数据库内起始行数),LIMIT 在SQL语句最后面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tableName LIMIT 5;</div><div class="line">SELECT * FROM tableName LIMIT 0,5;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM tableName LIMIT 5;</span><br><span class="line">SELECT * FROM tableName LIMIT 0,5;</span><br></pre></td></tr></table></figure>
 <p>IFNULL() 与 IF()两个函数的使用及区别:IFNULL(exp1,exp2) = IF(exp1 IS NULL,exp2,exp3)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SELECT field1 AS alias1, field2 AS alias2, IFNULL(field3 , value3) AS alias3 FROM tableName;</div><div class="line">SELECT field1 AS alias1, field2 AS alias2, IF(field3 IS NULL, value3, field3) AS alias3 FROM</div><div class="line">tableName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1 AS alias1, field2 AS alias2, IFNULL(field3 , value3) AS alias3 FROM tableName;</span><br><span class="line">SELECT field1 AS alias1, field2 AS alias2, IF(field3 IS NULL, value3, field3) AS alias3 FROM</span><br><span class="line">tableName;</span><br></pre></td></tr></table></figure>
 <p>集合函数(聚集函数)</p>
 <ul>
 <li>AVG()   – 求平均值 (计算平均时，不包含空值)</li>
@@ -138,20 +139,20 @@
 <li>MAX()   – 最大值</li>
 <li>MIN()   – 最小值</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT AVG(field) 平均值, SUM(field) 总和, MAX(field) 最大值, MIN(field) 最小值 ,COUNT(*) 总记录数, COUNT(field) field不为空的总数 FROM tableName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT AVG(field) 平均值, SUM(field) 总和, MAX(field) 最大值, MIN(field) 最小值 ,COUNT(*) 总记录数, COUNT(field) field不为空的总数 FROM tableName;</span><br></pre></td></tr></table></figure>
 <p>DISTINCT 去除重复</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT COUNT(DISTINCT field) alias FROM tableName;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(DISTINCT field) alias FROM tableName;</span><br></pre></td></tr></table></figure>
 <p>GROUP BY分组查询，一般前面是分组名称，紧跟着是集合函数(聚集函数)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT field1,AVG(field2) FROM tableName GROUP BY field1;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1,AVG(field2) FROM tableName GROUP BY field1;</span><br></pre></td></tr></table></figure>
 <p>HAVING 是分组条件（使用前提是使用了GROUP BY分组查询）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT field1,AVG(field2) FROM tableName GROUP BY field1 HAVING AVG(field2)&gt;=60 ORDER BY</div><div class="line">AVG(field2) DESC LIMIT 2;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1,AVG(field2) FROM tableName GROUP BY field1 HAVING AVG(field2)&gt;=60 ORDER BY</span><br><span class="line">AVG(field2) DESC LIMIT 2;</span><br></pre></td></tr></table></figure>
 <p>多表连接查询 查询结果是多个表中的信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">--等值链接查询</div><div class="line">SELECT tableName1.field1,tableName1.field2,tableName2.field1,tableName2.field2 FROM tableName1,</div><div class="line">tableName2 WHERE tableName1.fid=tableName2.id;</div><div class="line"></div><div class="line">--左链接查询</div><div class="line">SELECT t1.field1,t1.field2,t2.field1,t2.field2 FROM tableName1 t1 LEFT JOIN tableName2 t2 ON </div><div class="line">t1.fid=t2.id;</div><div class="line"></div><div class="line">--右链接查询</div><div class="line">SELECT t1.field1,t1.field2,t2.field1,t2.field2 FROM tableName1 t1 RIGHT JOIN tableName2 t2 ON</div><div class="line">t1.fid=t2.id;</div><div class="line"></div><div class="line">--表的自身链接查询</div><div class="line">SELECT t1.field1,t1.field2,... FROM tableName t1,tableName t2 WHERE t1.id&lt;t2.id;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--等值链接查询</span><br><span class="line">SELECT tableName1.field1,tableName1.field2,tableName2.field1,tableName2.field2 FROM tableName1,</span><br><span class="line">tableName2 WHERE tableName1.fid=tableName2.id;</span><br><span class="line"></span><br><span class="line">--左链接查询</span><br><span class="line">SELECT t1.field1,t1.field2,t2.field1,t2.field2 FROM tableName1 t1 LEFT JOIN tableName2 t2 ON </span><br><span class="line">t1.fid=t2.id;</span><br><span class="line"></span><br><span class="line">--右链接查询</span><br><span class="line">SELECT t1.field1,t1.field2,t2.field1,t2.field2 FROM tableName1 t1 RIGHT JOIN tableName2 t2 ON</span><br><span class="line">t1.fid=t2.id;</span><br><span class="line"></span><br><span class="line">--表的自身链接查询</span><br><span class="line">SELECT t1.field1,t1.field2,... FROM tableName t1,tableName t2 WHERE t1.id&lt;t2.id;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2015/11/30/MySQL数据表的增删改查操作/" data-id="cjd1v4k1x000cpv6foycx1xv1" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/11/30/MySQL数据表的增删改查操作/" data-id="cjrcxfjdt000d7t6fl3g4mnqr" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -191,7 +192,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -224,10 +225,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -273,7 +274,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

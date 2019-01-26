@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Linux服务器实现无密登陆 | Ancoka</title>
+  <title>Linux服务器实现无密登陆 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自己最近弄了台Linux系统的服务器，上面放了个人小站，经常会上去更新自己的代码什么乱七八糟的管理。因为经常登陆的缘故，总是感觉SSH连接时，输入ssh user@host -P port一长串登陆信息后，每次还要都输入密码。笔者实在忍受不了每次输密码的繁琐，决定试试无密码登陆。">
 <meta name="keywords" content="Linux,ssh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux服务器实现无密登陆">
 <meta property="og:url" content="http://blog.ancoka.com/2015/11/22/Linux服务器实现无密登陆/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="自己最近弄了台Linux系统的服务器，上面放了个人小站，经常会上去更新自己的代码什么乱七八糟的管理。因为经常登陆的缘故，总是感觉SSH连接时，输入ssh user@host -P port一长串登陆信息后，每次还要都输入密码。笔者实在忍受不了每次输密码的繁琐，决定试试无密码登陆。">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-30T03:27:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux服务器实现无密登陆">
 <meta name="twitter:description" content="自己最近弄了台Linux系统的服务器，上面放了个人小站，经常会上去更新自己的代码什么乱七八糟的管理。因为经常登陆的缘故，总是感觉SSH连接时，输入ssh user@host -P port一长串登陆信息后，每次还要都输入密码。笔者实在忍受不了每次输密码的繁琐，决定试试无密码登陆。">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-Linux服务器实现无密登陆" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Linux服务器实现无密登陆" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/22/Linux服务器实现无密登陆/" class="article-date">
   <time class="post-time" datetime="2015-11-22T02:49:30.000Z" itemprop="datePublished">
-    <span class="post-month">11月</span><br/>
+    <span class="post-month">11月</span><br>
     <span class="post-day">22</span>
   </time>
 </a>
@@ -119,7 +120,7 @@
 
 <ol>
 <li><p>在本机生成公钥/私钥对，适用于unix系的系统</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -P &apos;&apos; -C &apos;xxx@163.com&apos;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -P &apos;&apos; -C &apos;xxx@163.com&apos;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>敲回车键即可，然后会在当前用户的根目录下生成.ssh目录，.ssh目录下会有id_rsa和id_rsa.pub两个文件</p>
 </li>
@@ -132,15 +133,15 @@
 
 <p>但是，每次ssh连接都会输入每台主机的用户名、ip地址及端口，对于管理一台服务器还可以接受，但是管理的服务器不只一台时，每台服务器的用户名、ip地址、端口都需要记忆，这是相当吃力的，但如果我们给每台服务器设置一个别名就容易记忆的多。此时我们就可以基于主机别名进行远程连接。</p>
 <p>基于别名的配置很简单，就是在本机的用户根目录下的.ssh目录下，创建一个名为config的文件，文件内容如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Host 别名1</div><div class="line">    HostName        主机名或主机IP</div><div class="line">    Port            端口</div><div class="line">    User            用户名</div><div class="line">    IdentityFile    密钥文件的路径</div><div class="line">Host 别名2</div><div class="line">    HostName        主机名或主机IP</div><div class="line">    Port            端口</div><div class="line">    User            用户名</div><div class="line">    IdentityFile    密钥文件的路径</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Host 别名1</span><br><span class="line">    HostName        主机名或主机IP</span><br><span class="line">    Port            端口</span><br><span class="line">    User            用户名</span><br><span class="line">    IdentityFile    密钥文件的路径</span><br><span class="line">Host 别名2</span><br><span class="line">    HostName        主机名或主机IP</span><br><span class="line">    Port            端口</span><br><span class="line">    User            用户名</span><br><span class="line">    IdentityFile    密钥文件的路径</span><br></pre></td></tr></table></figure>
 <p>上面的配置可以缺省，不需要每一个都填写。有了这些配置，就可以这样用 ssh 登陆服务器了:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh 别名</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 别名</span><br></pre></td></tr></table></figure>
 <p>这样是不是简单了很多呢。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2015/11/22/Linux服务器实现无密登陆/" data-id="cjd1v4k1v0008pv6f66t3k4b1" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/11/22/Linux服务器实现无密登陆/" data-id="cjrcxfjdl00087t6fl863o4vz" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
@@ -180,7 +181,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -213,10 +214,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -262,7 +263,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

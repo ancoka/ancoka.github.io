@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>jQuery 实现复选框的全选与反选 | Ancoka</title>
+  <title>jQuery 实现复选框的全选与反选 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="忽略了 HTML 部分代码，直接上 javascript 代码： 12345678910111213141516171819202122232425$(&apos;#check-all&apos;).change(function () &amp;#123;	if(this.checked) &amp;#123;		$(&apos;#box&apos;).find(&apos;input[type=&quot;checkbox&quot;]&apos;).each(function () &amp;">
 <meta name="keywords" content="javascript,jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery 实现复选框的全选与反选">
 <meta property="og:url" content="http://blog.ancoka.com/2017/06/01/jQuery-实现复选框的全选与反选/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="忽略了 HTML 部分代码，直接上 javascript 代码： 12345678910111213141516171819202122232425$(&apos;#check-all&apos;).change(function () &amp;#123;	if(this.checked) &amp;#123;		$(&apos;#box&apos;).find(&apos;input[type=&quot;checkbox&quot;]&apos;).each(function () &amp;">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-31T16:40:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery 实现复选框的全选与反选">
 <meta name="twitter:description" content="忽略了 HTML 部分代码，直接上 javascript 代码： 12345678910111213141516171819202122232425$(&apos;#check-all&apos;).change(function () &amp;#123;	if(this.checked) &amp;#123;		$(&apos;#box&apos;).find(&apos;input[type=&quot;checkbox&quot;]&apos;).each(function () &amp;">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-jQuery-实现复选框的全选与反选" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-jQuery-实现复选框的全选与反选" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/01/jQuery-实现复选框的全选与反选/" class="article-date">
   <time class="post-time" datetime="2017-05-31T16:37:06.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
+    <span class="post-month">6月</span><br>
     <span class="post-day">01</span>
   </time>
 </a>
@@ -110,12 +111,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>忽略了 HTML 部分代码，直接上 javascript 代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#check-all'</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.checked) &#123;</div><div class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">			$(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">			$(<span class="keyword">this</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	$(<span class="keyword">this</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.checked)&#123;</div><div class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length == $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</div><div class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length != $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</div><div class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">false</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#check-all'</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>.checked) &#123;</span><br><span class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			$(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			$(<span class="keyword">this</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#box'</span>).find(<span class="string">'input[type="checkbox"]'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="keyword">this</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.checked)&#123;</span><br><span class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length == $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</span><br><span class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">true</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> ($(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox'</span>).length != $(<span class="string">'#box'</span>).find(<span class="string">'input:checkbox:checked'</span>).length) &#123;</span><br><span class="line">				$(<span class="string">'#check-all'</span>).prop(<span class="string">'checked'</span>, <span class="literal">false</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2017/06/01/jQuery-实现复选框的全选与反选/" data-id="cjd1v4k2d0013pv6fxy3n7xjr" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2017/06/01/jQuery-实现复选框的全选与反选/" data-id="cjrcxfjek00157t6f2gnkc3gr" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -155,7 +156,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -188,10 +189,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -237,7 +238,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

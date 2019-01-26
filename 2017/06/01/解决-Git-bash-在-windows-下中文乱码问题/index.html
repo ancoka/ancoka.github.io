@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>解决 Git bash 在 windows 下中文乱码问题 | Ancoka</title>
+  <title>解决 Git bash 在 windows 下中文乱码问题 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在 Git 安装目录下，存在 etc 目录，需要修改该目录下的几个文件就可以正常显示中文。  编辑 /etc/gitconfig 文件（不存在则创建），文件末尾追加如下内容： 123456[gui]encoding = utf-8          #代码库统一使用utf-8 [i18n]commitencoding = GB2312   #log编码[svn]pathnameencoding =">
 <meta name="keywords" content="windows,Git bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决 Git bash 在 windows 下中文乱码问题">
 <meta property="og:url" content="http://blog.ancoka.com/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="在 Git 安装目录下，存在 etc 目录，需要修改该目录下的几个文件就可以正常显示中文。  编辑 /etc/gitconfig 文件（不存在则创建），文件末尾追加如下内容： 123456[gui]encoding = utf-8          #代码库统一使用utf-8 [i18n]commitencoding = GB2312   #log编码[svn]pathnameencoding =">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-31T16:46:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决 Git bash 在 windows 下中文乱码问题">
 <meta name="twitter:description" content="在 Git 安装目录下，存在 etc 目录，需要修改该目录下的几个文件就可以正常显示中文。  编辑 /etc/gitconfig 文件（不存在则创建），文件末尾追加如下内容： 123456[gui]encoding = utf-8          #代码库统一使用utf-8 [i18n]commitencoding = GB2312   #log编码[svn]pathnameencoding =">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-解决-Git-bash-在-windows-下中文乱码问题" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-解决-Git-bash-在-windows-下中文乱码问题" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/" class="article-date">
   <time class="post-time" datetime="2017-05-31T16:42:08.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
+    <span class="post-month">6月</span><br>
     <span class="post-day">01</span>
   </time>
 </a>
@@ -112,25 +113,25 @@
         <p><strong>在 Git 安装目录下，存在 etc 目录，需要修改该目录下的几个文件就可以正常显示中文。</strong></p>
 <ul>
 <li><p>编辑 /etc/gitconfig 文件（不存在则创建），文件末尾追加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[gui]</div><div class="line">encoding = utf-8          #代码库统一使用utf-8 </div><div class="line">[i18n]</div><div class="line">commitencoding = GB2312   #log编码</div><div class="line">[svn]</div><div class="line">pathnameencoding = GB2312 #支持中文路径</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[gui]</span><br><span class="line">encoding = utf-8          #代码库统一使用utf-8 </span><br><span class="line">[i18n]</span><br><span class="line">commitencoding = GB2312   #log编码</span><br><span class="line">[svn]</span><br><span class="line">pathnameencoding = GB2312 #支持中文路径</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <ul>
 <li><p>编辑 /etc/git-completion.bash 文件（不存在则创建），文件末尾追加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias ls=&apos;ls --show-control-chars --color=auto&apos; #ls能够正常显示中文</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&apos;ls --show-control-chars --color=auto&apos; #ls能够正常显示中文</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编辑 /etc/inputrc 文件，修改如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set output-meta on   #bash中可以正常输入中文</div><div class="line">set convert-meta off</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set output-meta on   #bash中可以正常输入中文</span><br><span class="line">set convert-meta off</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编辑 /etc/profile 文件，文件末尾追加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export LESSHARESET=utf-8</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LESSHARESET=utf-8</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/" data-id="cjd1v4k2k001ppv6f8twfdr9a" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2017/06/01/解决-Git-bash-在-windows-下中文乱码问题/" data-id="cjrcxfjez001q7t6figyhrkyl" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-bash/">Git bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -170,7 +171,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -203,10 +204,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -252,7 +253,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

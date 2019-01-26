@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>git-shell禁止 Git 用户登陆，仅允许访问 | Ancoka</title>
+  <title>git-shell禁止 Git 用户登陆，仅允许访问 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在搭建 Git 服务器时，我们需要新创建 Git 用户，来运行 Git 服务。但是添加的用户可以通过 SSH 进行远程登陆。这必然存在一定的安全问题，黑客可以通过 Git 用户提权获取超级管理员权限。那么我们怎么防止 Git 用户登陆，又不影响 Git 用户对代码库的pull/push操作呢，最简单的方式就是直接修改 Git 用户的默认 shell 为 /usr/bin/git-shell。  查">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git-shell禁止 Git 用户登陆，仅允许访问">
 <meta property="og:url" content="http://blog.ancoka.com/2017/06/05/git-shell禁止-Git-用户登陆，仅允许访问/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="在搭建 Git 服务器时，我们需要新创建 Git 用户，来运行 Git 服务。但是添加的用户可以通过 SSH 进行远程登陆。这必然存在一定的安全问题，黑客可以通过 Git 用户提权获取超级管理员权限。那么我们怎么防止 Git 用户登陆，又不影响 Git 用户对代码库的pull/push操作呢，最简单的方式就是直接修改 Git 用户的默认 shell 为 /usr/bin/git-shell。  查">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-06-04T16:14:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git-shell禁止 Git 用户登陆，仅允许访问">
 <meta name="twitter:description" content="在搭建 Git 服务器时，我们需要新创建 Git 用户，来运行 Git 服务。但是添加的用户可以通过 SSH 进行远程登陆。这必然存在一定的安全问题，黑客可以通过 Git 用户提权获取超级管理员权限。那么我们怎么防止 Git 用户登陆，又不影响 Git 用户对代码库的pull/push操作呢，最简单的方式就是直接修改 Git 用户的默认 shell 为 /usr/bin/git-shell。  查">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-git-shell禁止-Git-用户登陆，仅允许访问" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-shell禁止-Git-用户登陆，仅允许访问" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/05/git-shell禁止-Git-用户登陆，仅允许访问/" class="article-date">
   <time class="post-time" datetime="2017-06-04T16:01:03.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
+    <span class="post-month">6月</span><br>
     <span class="post-day">05</span>
   </time>
 </a>
@@ -112,22 +113,22 @@
         <p>在搭建 Git 服务器时，我们需要新创建 Git 用户，来运行 Git 服务。但是添加的用户可以通过 SSH 进行远程登陆。这必然存在一定的安全问题，黑客可以通过 Git 用户提权获取超级管理员权限。那么我们怎么防止 Git 用户登陆，又不影响 Git 用户对代码库的pull/push操作呢，最简单的方式就是直接修改 Git 用户的默认 shell 为 /usr/bin/git-shell。</p>
 <ol>
 <li><p>查看系统是否存在 git-shell，一般在安装完 Git之后都已经存在</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">whereis git-shell</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis git-shell</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <a id="more"></a>
-<ol>
+<ol start="2">
 <li><p>查看 <code>/etc/shells</code> 文件内是否存在<code>/usr/bin/git-shell</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells</div><div class="line">/bin/sh</div><div class="line">/bin/bash</div><div class="line">/sbin/nologin</div><div class="line">/usr/bin/sh</div><div class="line">/usr/bin/bash</div><div class="line">/usr/sbin/nologin</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br><span class="line">/bin/sh</span><br><span class="line">/bin/bash</span><br><span class="line">/sbin/nologin</span><br><span class="line">/usr/bin/sh</span><br><span class="line">/usr/bin/bash</span><br><span class="line">/usr/sbin/nologin</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>若<code>/etc/shells</code> 文件不存在<code>/usr/bin/git-shell</code>，编辑文件，加入<code>/usr/bin/git-shell</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &quot;/usr/bin/git-shell&quot; &gt;&gt; /etc/shells</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;/usr/bin/git-shell&quot; &gt;&gt; /etc/shells</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更改 Git 用户的默认 shell 为 <code>/usr/bin/git-shell</code>，若未添加<code>/usr/bin/git-shell</code>到<code>/etc/shells</code> 文件此步会执行错误</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /usr/bin/git-shell git</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /usr/bin/git-shell git</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后在 Git 用户家目录下，新建git-shell-commands/no-interactive-login文件，用于登陆提示信息</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/sh</div><div class="line">printf '%s\n' "Hi $USER! You've successfully authenticated, but I do not"</div><div class="line">printf '%s\n' "provide interactive shell access."</div><div class="line">exit 128</div></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">printf '%s\n' "Hi $USER! You've successfully authenticated, but I do not"</span><br><span class="line">printf '%s\n' "provide interactive shell access."</span><br><span class="line">exit 128</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>现在大功告成，自己验证下结果吧。<strong><font color="#00AAFF">以上操作环境均为 Linux 操作系统！！！</font></strong></p>
@@ -135,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2017/06/05/git-shell禁止-Git-用户登陆，仅允许访问/" data-id="cjd1v4k2c0010pv6fze7n6byd" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2017/06/05/git-shell禁止-Git-用户登陆，仅允许访问/" data-id="cjrcxfjec000t7t6f01buwynv" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -145,15 +146,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2017/06/13/Centos-7-shadowsocks-安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Centos 7 shadowsocks 安装与配置
-        
-      </div>
-    </a>
   
   
     <a href="/2017/06/04/RESTful-API-设计规范/" id="article-nav-older" class="article-nav-link-wrap">
@@ -175,7 +167,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -208,10 +200,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -257,7 +249,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

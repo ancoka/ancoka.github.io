@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Git tag命令的使用 | Ancoka</title>
+  <title>Git tag命令的使用 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
 <meta name="keywords" content="版本控制,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git tag命令的使用">
 <meta property="og:url" content="http://blog.ancoka.com/2016/04/30/Git-tag命令的使用/index.html">
-<meta property="og:site_name" content="Ancoka">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-30T05:29:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git tag命令的使用">
 <meta name="twitter:description" content="同大多数版本控制一样，Git同样可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。 查看标签   列表所有标签   1git tag  列出版本为1开头的标签   1git tag -l &amp;quot;1.*&amp;quot;">
   
-    <link rel="alternate" href="/atom.xml" title="Ancoka" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,10 +41,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-Git-tag命令的使用" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Git-tag命令的使用" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/30/Git-tag命令的使用/" class="article-date">
   <time class="post-time" datetime="2016-04-30T04:16:45.000Z" itemprop="datePublished">
-    <span class="post-month">4月</span><br/>
+    <span class="post-month">4月</span><br>
     <span class="post-day">30</span>
   </time>
 </a>
@@ -114,10 +115,10 @@
 
 <ul>
 <li><p>列表所有标签</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>列出版本为1开头的标签</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -l &quot;1.*&quot;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -l &quot;1.*&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
@@ -126,40 +127,40 @@
 <p>Git使用的标签有两种类型：轻量级的标签（lightweight）和含附注的标签（annotated）轻量级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，电子邮件地址和日期，以及标签说明，标签本身也允许使用GNU Privacy Guard (GPG)来签署或验证。一般建议使用含附注型的标签，以便保留相关信息；当然，如果只是临时性加注标签，或者不需要旁注额外信息，用轻量级标签也是可以的。</p>
 <p><strong>1.含附注的标签</strong></p>
 <p>创建一个含附注类型的标签非常简单，用-a（译注：取annotated的首字母）指定标签名字即可，-m选项则指定了对应的标签说明。若没有-m参数，Git会启用编辑器让你输入标签说明。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a 1.0 -m &quot;tag 1.0&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a 1.0 -m &quot;tag 1.0&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>2.轻量级标签</strong></p>
 <p>轻量级标签实际上就是一个保存着对应提交对象的校验和信息的文件。要创建这样的标签，一个-a，-s 或-m选项都不用，直接给出标签名字即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag 1.0</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag 1.0</span><br></pre></td></tr></table></figure>
 <h3>签署标签</h3>
 
 <p>如果你有自己的私钥，还可以用GPG来签署标签，只需要把之前的-a改为-s（译注：取signed的首字母）即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -s 1.0 -m &quot;signed tag 1.0&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -s 1.0 -m &quot;signed tag 1.0&quot;</span><br></pre></td></tr></table></figure>
 <p>运行git show会看到对应的GPG签名也附在其内</p>
 <h3>验证标签</h3>
 
 <p>可以使用git tag -v [tag-name]（译注：取 verify 的首字母）的方式验证已经签署的标签。此命令会调用GPG来验证签名，所以你需要有签署者的公钥，存放在keyring中，才能验证：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -v 1.0</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -v 1.0</span><br></pre></td></tr></table></figure>
 <p>对于未签署的标签进行验证，会报错。</p>
 <h3>后期加注标签</h3>
 
 <p>如果你昨天提交的代码，忘记打标签的话，没关系，Git允许你对之前的提交加注标签，你需要像下面这样，找到要加标签的commit id，然而只需要前几位就可以:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git log --pretty=oneline --abbrev-commit</div><div class="line">...</div><div class="line">5e00146 fix README.md</div><div class="line">6ba7280 修改描述</div><div class="line">1902d5c feat(examples/atom.php): 新增使用demo</div><div class="line">79171e3 Initialization project</div><div class="line">38100a1 Initial commit</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline --abbrev-commit</span><br><span class="line">...</span><br><span class="line">5e00146 fix README.md</span><br><span class="line">6ba7280 修改描述</span><br><span class="line">1902d5c feat(examples/atom.php): 新增使用demo</span><br><span class="line">79171e3 Initialization project</span><br><span class="line">38100a1 Initial commit</span><br></pre></td></tr></table></figure>
 <p>比如说要对，上面的“新增使用demo”那次提交加注标签，它对应的commit id是1902d5c，执行如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git tag -a 1.0 -m &quot;tag 1.0&quot; 1902d5c</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a 1.0 -m &quot;tag 1.0&quot; 1902d5c</span><br></pre></td></tr></table></figure>
 <h3>推送和删除远程标签</h3>
 
 <ul>
 <li><p>推送远程标签</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin [tag-name]</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin [tag-name]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>删除远程标签</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :refs/tags/[tag-name]</div></pre></td></tr></table></figure></li>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/[tag-name]</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2016/04/30/Git-tag命令的使用/" data-id="cjd1v4k1r0006pv6foamktuhe" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2016/04/30/Git-tag命令的使用/" data-id="cjrcxfjdi00067t6fzwyz9izo" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
@@ -199,7 +200,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Ancoka</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -232,10 +233,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Ancoka</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
       <a href="/categories"><div><strong>12</strong><br>分类</div></a>
       <a href="/tags"><div><strong>26</strong><br>标签</div></a>
     </div>
@@ -281,7 +282,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2017 - 2018 Ancoka<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       
