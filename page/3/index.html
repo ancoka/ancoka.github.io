@@ -42,9 +42,9 @@
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>24</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -73,6 +73,128 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-Yii无限级分类实现下拉列表效果" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/31/Yii无限级分类实现下拉列表效果/" class="article-date">
+  <time class="post-time" datetime="2015-10-30T18:38:22.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br>
+    <span class="post-day">31</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/31/Yii无限级分类实现下拉列表效果/">Yii无限级分类实现下拉列表效果</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在项目中用到无限级，就研究了一下。其实无限级分类的原理很简单，主要就运用递归函数，进行取值。下面我就简单写了一下关于用递归函数，实现无限级分类下拉列表效果。</p>
+<p>首先，创建你数据表，结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE channel(</span><br><span class="line">    id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,</span><br><span class="line">    pid INT(11) UNSIGNED NOT NULL,</span><br><span class="line">    `name` VARCHAR(20),</span><br><span class="line">    PRIMARY KEY(id)</span><br><span class="line">)ENGINE=INNODB DEFAULT CHARSET = utf8;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2015/10/31/Yii无限级分类实现下拉列表效果/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ancoka.com/2015/10/31/Yii无限级分类实现下拉列表效果/" data-id="cjv0n4j0r000vhvpxn50ic728" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Yii实现数据分页" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/31/Yii实现数据分页/" class="article-date">
+  <time class="post-time" datetime="2015-10-30T18:25:42.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br>
+    <span class="post-day">31</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/31/Yii实现数据分页/">Yii实现数据分页</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因公司在使用yii框架进程网站开发，前段时间在开发中遇到数据分页问题，在此整理了下yii两种分页方式的实现代码。</p>
+<p>第一种：CListView分页（针对对象形式的数据分页）<br>【controler】代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    $criteria = <span class="keyword">new</span> CDbCriteria();</span><br><span class="line">    $criteria-&gt;order = ‘rid ASC<span class="string">';</span></span><br><span class="line"><span class="string">    $dataProvider = new CActiveDataProvider(‘RobotModel’,array(</span></span><br><span class="line"><span class="string">        ‘pagination’ =&gt; array(</span></span><br><span class="line"><span class="string">            ‘pageSize’ =&gt; Yii::app()-&gt;params[‘pagesize’],</span></span><br><span class="line"><span class="string">            ‘pageVar’ =&gt; Yii::app()-&gt;params[‘pagevar’],</span></span><br><span class="line"><span class="string">        ),</span></span><br><span class="line"><span class="string">        ‘criteria’ =&gt; $criteria,</span></span><br><span class="line"><span class="string">    ));</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    $this-&gt;render(‘index’,array(</span></span><br><span class="line"><span class="string">        ‘dataProvider’ =&gt; $dataProvider,</span></span><br><span class="line"><span class="string">    ));</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2015/10/31/Yii实现数据分页/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ancoka.com/2015/10/31/Yii实现数据分页/" data-id="cjv0n4j0g000ohvpxt49fq6fw" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-PHP基于session-ajax实现文件上传进度条" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -127,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ancoka.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/" data-id="cjrcy81cm000c2x6fnfesjthy" class="article-share-link">分享</a>
+      <a data-url="http://ancoka.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/" data-id="cjv0n4j01000chvpx9l5znz4n" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
@@ -189,9 +311,9 @@
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>21</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>24</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
 
 

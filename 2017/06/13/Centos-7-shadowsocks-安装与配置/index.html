@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Centos 7 shadowsocks 安装与配置 | Danny&#39;s Blog</title>
+  <title>Centos 7 shadowsocks 安装与配置 | 楠枫渡</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作为技术人员，经常需要去访问一些国外的网站，然而因为一些XX的原因，禁止这些网站的访问，如谷歌搜索。因此，我们有必要自己搭建个梯子，自由享受网络。 如何选择 VPS 提供商选择 VPS 尽量选择一个国外的 VPS 提供商（国内缩水太厉害）节点最好选在香港、日本、韩国等离大陆较近的地方，推荐以下提供商：  Vultr DigitalOcean Linode">
 <meta name="keywords" content="科学上网,shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos 7 shadowsocks 安装与配置">
-<meta property="og:url" content="http://blog.ancoka.com/2017/06/13/Centos-7-shadowsocks-安装与配置/index.html">
-<meta property="og:site_name" content="Danny&#39;s Blog">
+<meta property="og:url" content="http://ancoka.com/2017/06/13/Centos-7-shadowsocks-安装与配置/index.html">
+<meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="作为技术人员，经常需要去访问一些国外的网站，然而因为一些XX的原因，禁止这些网站的访问，如谷歌搜索。因此，我们有必要自己搭建个梯子，自由享受网络。 如何选择 VPS 提供商选择 VPS 尽量选择一个国外的 VPS 提供商（国内缩水太厉害）节点最好选在香港、日本、韩国等离大陆较近的地方，推荐以下提供商：  Vultr DigitalOcean Linode">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-06-13T15:52:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos 7 shadowsocks 安装与配置">
 <meta name="twitter:description" content="作为技术人员，经常需要去访问一些国外的网站，然而因为一些XX的原因，禁止这些网站的访问，如谷歌搜索。因此，我们有必要自己搭建个梯子，自由享受网络。 如何选择 VPS 提供商选择 VPS 尽量选择一个国外的 VPS 提供商（国内缩水太厉害）节点最好选在香港、日本、韩国等离大陆较近的地方，推荐以下提供商：  Vultr DigitalOcean Linode">
   
-    <link rel="alternate" href="/atom.xml" title="Danny&#39;s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -31,7 +32,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -40,12 +41,12 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Danny</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>26</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -73,11 +74,11 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-Centos-7-shadowsocks-安装与配置" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Centos-7-shadowsocks-安装与配置" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/13/Centos-7-shadowsocks-安装与配置/" class="article-date">
   <time class="post-time" datetime="2017-06-13T15:06:02.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
+    <span class="post-month">6月</span><br>
     <span class="post-day">13</span>
   </time>
 </a>
@@ -112,25 +113,25 @@
         <p>作为技术人员，经常需要去访问一些国外的网站，然而因为一些XX的原因，禁止这些网站的访问，如谷歌搜索。因此，我们有必要自己搭建个梯子，自由享受网络。</p>
 <h3 id="如何选择-VPS-提供商"><a href="#如何选择-VPS-提供商" class="headerlink" title="如何选择 VPS 提供商"></a>如何选择 VPS 提供商</h3><p>选择 VPS 尽量选择一个国外的 VPS 提供商（国内缩水太厉害）节点最好选在香港、日本、韩国等离大陆较近的地方，推荐以下提供商：</p>
 <ul>
-<li><a href="http://www.vultr.com/?ref=6992738" target="_blank" rel="external">Vultr</a></li>
-<li><a href="https://m.do.co/c/e3b764b1a17f" target="_blank" rel="external">DigitalOcean</a></li>
-<li><a href="https://www.linode.com" target="_blank" rel="external">Linode</a></li>
+<li><a href="http://www.vultr.com/?ref=6992738" target="_blank" rel="noopener">Vultr</a></li>
+<li><a href="https://m.do.co/c/e3b764b1a17f" target="_blank" rel="noopener">DigitalOcean</a></li>
+<li><a href="https://www.linode.com" target="_blank" rel="noopener">Linode</a></li>
 </ul>
 <a id="more"></a>
-<h3 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure>
-<h3 id="配置-shadowsocks"><a href="#配置-shadowsocks" class="headerlink" title="配置 shadowsocks"></a>配置 shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+<h3 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<h3 id="配置-shadowsocks"><a href="#配置-shadowsocks" class="headerlink" title="配置 shadowsocks"></a>配置 shadowsocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
 <p><b>配置内容如下：</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_port&quot;:8838,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;password&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false,</div><div class="line">    &quot;workers&quot;: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;server_port&quot;:8838,</span><br><span class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;password&quot;:&quot;password&quot;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;fast_open&quot;: false,</span><br><span class="line">    &quot;workers&quot;: 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><b>多账号配置：</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;port_password&quot;:</div><div class="line">&#123;</div><div class="line">    &quot;8888&quot;:&quot;passwd1&quot;,</div><div class="line">    &quot;8889&quot;:&quot;passwd2&quot;,</div><div class="line">    &quot;8890&quot;:&quot;passwd3&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;port_password&quot;:</span><br><span class="line">&#123;</span><br><span class="line">    &quot;8888&quot;:&quot;passwd1&quot;,</span><br><span class="line">    &quot;8889&quot;:&quot;passwd2&quot;,</span><br><span class="line">    &quot;8890&quot;:&quot;passwd3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><b>后台启动：</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nohup ssserver -c /etc/shadowsocks.json &gt; log&amp;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /etc/shadowsocks.json &gt; log&amp;</span><br></pre></td></tr></table></figure>
 <p><b>防火墙开放端口</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">firewall-cmd --zone=public --add-port=8888/tcp --permanent</div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8888/tcp --permanent</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2017/06/13/Centos-7-shadowsocks-安装与配置/" data-id="cjqiss78v0000am6f50xeyfas" class="article-share-link">分享</a>
+      <a data-url="http://ancoka.com/2017/06/13/Centos-7-shadowsocks-安装与配置/" data-id="cjv0n4izg0000hvpxha75p1nn" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科学上网/">科学上网</a></li></ul>
@@ -140,6 +141,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/03/05/Navicat-Premium-12-1-15-for-Mac-破解教程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Navicat Premium 12.1.15 for Mac 破解教程
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/05/git-shell禁止-Git-用户登陆，仅允许访问/" id="article-nav-older" class="article-nav-link-wrap">
@@ -161,7 +171,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Danny&#39;s Blog</h1>
+    <h1 class="blog-title">楠枫渡</h1>
     <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
     <ul class="blog-link">
      
@@ -194,12 +204,12 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
-    <h2 class="author">Danny</h2>
+    <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>12</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>26</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
     </div>
 
 
@@ -243,7 +253,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2018 - 2019 Danny<br>
+      &copy;2018 - 2019 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       
