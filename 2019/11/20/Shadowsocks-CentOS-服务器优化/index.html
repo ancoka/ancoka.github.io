@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Shadowsocks CentOS 服务器优化 | 楠枫渡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="服务器明明不限制带宽，访问网站页面却出奇的慢？看了 VPS 的监控也只能达到几百kb的带宽，实在忍受不了这样的龟速，开启这次针对Shadowsoks的服务器优化之路。 系统说明本次只针对 CentOS 7 系统，其他发行方的系统或者7以外版本的系统均没有实际操作，不能保证按照这次操作流程可以成功操作。本次涉及操作系统内核升级，请操作前备份重要数据以防止升级失败造成的数据丢失问题。">
+<meta name="keywords" content="科学上网,shadowsocks,服务器优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shadowsocks CentOS 服务器优化">
+<meta property="og:url" content="http://blog.ancoka.com/2019/11/20/Shadowsocks-CentOS-服务器优化/index.html">
+<meta property="og:site_name" content="楠枫渡">
+<meta property="og:description" content="服务器明明不限制带宽，访问网站页面却出奇的慢？看了 VPS 的监控也只能达到几百kb的带宽，实在忍受不了这样的龟速，开启这次针对Shadowsoks的服务器优化之路。 系统说明本次只针对 CentOS 7 系统，其他发行方的系统或者7以外版本的系统均没有实际操作，不能保证按照这次操作流程可以成功操作。本次涉及操作系统内核升级，请操作前备份重要数据以防止升级失败造成的数据丢失问题。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-20T02:49:14.010Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shadowsocks CentOS 服务器优化">
+<meta name="twitter:description" content="服务器明明不限制带宽，访问网站页面却出奇的慢？看了 VPS 的监控也只能达到几百kb的带宽，实在忍受不了这样的龟速，开启这次针对Shadowsoks的服务器优化之路。 系统说明本次只针对 CentOS 7 系统，其他发行方的系统或者7以外版本的系统均没有实际操作，不能保证按照这次操作流程可以成功操作。本次涉及操作系统内核升级，请操作前备份重要数据以防止升级失败造成的数据丢失问题。">
+  
+    <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="/css/fonts.css">
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">楠枫渡</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Shadowsocks-CentOS-服务器优化" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/20/Shadowsocks-CentOS-服务器优化/" class="article-date">
+  <time class="post-time" datetime="2019-11-20T02:25:36.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br>
+    <span class="post-day">20</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Shadowsocks CentOS 服务器优化
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/分享/">分享</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>服务器明明不限制带宽，访问网站页面却出奇的慢？看了 VPS 的监控也只能达到几百kb的带宽，实在忍受不了这样的龟速，开启这次针对Shadowsoks的服务器优化之路。</p>
+<h3 id="系统说明"><a href="#系统说明" class="headerlink" title="系统说明"></a>系统说明</h3><p>本次只针对 CentOS 7 系统，其他发行方的系统或者7以外版本的系统均没有实际操作，不能保证按照这次操作流程可以成功操作。本次涉及操作系统内核升级，请操作前备份重要数据以防止升级失败造成的数据丢失问题。</p>
+<a id="more"></a>
+<h4 id="检查系统内核版本，是否为3-5版本以上"><a href="#检查系统内核版本，是否为3-5版本以上" class="headerlink" title="检查系统内核版本，是否为3.5版本以上"></a>检查系统内核版本，是否为3.5版本以上</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> uname -sr</span><br><span class="line"><span class="meta">&gt;</span> Linux 3.10.0-957.27.2.el7.x86_64</span><br></pre></td></tr></table></figure>
+<h4 id="升级-CentOS-7-×-内核-启用-ELRepo"><a href="#升级-CentOS-7-×-内核-启用-ELRepo" class="headerlink" title="升级 CentOS 7.× 内核,启用 ELRepo"></a>升级 CentOS 7.× 内核,启用 ELRepo</h4><p>大多数现代发行版提供了一种使用 <code>yum</code> 等包管理系统和官方支持的仓库升级内核的方法。</p>
+<p>但是，这只会升级内核到仓库中可用的最新版本,而不是在 <a href="https://link.jianshu.com?t=https://www.kernel.org/" target="_blank" rel="noopener">The Linux Kernel Archives</a> 中可用的最新主线稳定内核.不幸的是, Red Hat 只允许使用 <code>yum</code> 升级内核.与 Red Hat 不同，CentOS 允许使用 ELRepo,这是一个第三方仓库,可以将内核升级到最新主线稳定内核.</p>
+<p>要在 CentOS 7.× 上启用 ELRepo 仓库,请运行:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line"><span class="meta">#</span> rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>仓库启用后，你可以使用下面的命令列出可用的系统内核相关包:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum --disablerepo="*" --enablerepo="elrepo-kernel" list available</span><br></pre></td></tr></table></figure>
+<p>接下来，安装最新的主线稳定内核:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum --enablerepo=elrepo-kernel install kernel-ml</span><br></pre></td></tr></table></figure>
+<p>由于网络原因,以上操作可能需要不少时间.</p>
+<h4 id="重启机器，检查当前-CentOS-系统内核版本"><a href="#重启机器，检查当前-CentOS-系统内核版本" class="headerlink" title="重启机器，检查当前 CentOS 系统内核版本"></a>重启机器，检查当前 CentOS 系统内核版本</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> uname -sr</span><br><span class="line"><span class="meta">&gt;</span> Linux 5.3.10-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure>
+<p>可以看到系统内核已经升级到最新的主线稳定内核.</p>
+<h4 id="设置-GRUB-默认的内核版本"><a href="#设置-GRUB-默认的内核版本" class="headerlink" title="设置 GRUB 默认的内核版本"></a>设置 GRUB 默认的内核版本</h4><p>为了让新安装的内核成为默认启动选项，你需要如下修改 GRUB 配置,打开并编辑 <code>/etc/default/grub</code> 并设置 <code>GRUB_DEFAULT=0</code>.意思是 GRUB 初始化页面的第一个内核将作为默认内核.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vim /etc/default/grub</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span> 1 GRUB_TIMEOUT=5</span><br><span class="line"><span class="meta">&gt;</span> 2 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"</span><br><span class="line"><span class="meta">&gt;</span> 3 GRUB_DEFAULT=0</span><br><span class="line"><span class="meta">&gt;</span> 4 GRUB_DISABLE_SUBMENU=true</span><br><span class="line"><span class="meta">&gt;</span> 5 GRUB_TERMINAL_OUTPUT="console"</span><br><span class="line"><span class="meta">&gt;</span> 6 GRUB_CMDLINE_LINUX="consoleblank=0 crashkernel=auto rhgb quiet"</span><br><span class="line"><span class="meta">&gt;</span> 7 GRUB_DISABLE_RECOVERY="true"</span><br></pre></td></tr></table></figure>
+<p>接下来运行下面的命令来重新创建内核配置.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> grub2-mkconfig -o /boot/grub2/grub.cfg</span><br></pre></td></tr></table></figure>
+<p>重启机器，查看系统当前内核版本，验证最新的内核已作为默认内核</p>
+<h4 id="删除-CentOS-更新后的旧内核"><a href="#删除-CentOS-更新后的旧内核" class="headerlink" title="删除 CentOS 更新后的旧内核"></a>删除 CentOS 更新后的旧内核</h4><p>查看系统中全部的内核 RPM 包:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> rpm -qa | grep kernel</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span> kernel-tools-libs-3.10.0-957.27.2.el7.x86_64</span><br><span class="line"><span class="meta">&gt;</span> kernel-tools-3.10.0-957.27.2.el7.x86_64</span><br><span class="line"><span class="meta">&gt;</span> kernel-3.10.0-957.27.2.el7.x86_64</span><br><span class="line"><span class="meta">&gt;</span> kernel-ml-5.3.10-1.el7.elrepo.x86_64</span><br><span class="line"><span class="meta">&gt;</span> kernel-3.10.0-957.el7.x86_64</span><br></pre></td></tr></table></figure>
+<p>删除旧内核的 RPM 包:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum remove kernel-tools-libs-3.10.0-957.27.2.el7.x86_64 kernel-tools-3.10.0-957.27.2.el7.x86_64 kernel-3.10.0-957.27.2.el7.x86_64 kernel-3.10.0-957.el7.x86_64</span><br></pre></td></tr></table></figure>
+<h4 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> reboot</span><br></pre></td></tr></table></figure>
+<h4 id="内核参数优化"><a href="#内核参数优化" class="headerlink" title="内核参数优化"></a>内核参数优化</h4><p><strong>第一步，增加系统文件描述符的最大限数</strong></p>
+<p>编辑文件 <code>limits.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vim /etc/security/limits.conf</span><br></pre></td></tr></table></figure>
+<p>增加以下两行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* soft nofile 51200</span><br><span class="line">* hard nofile 51200</span><br></pre></td></tr></table></figure>
+<p>启动shadowsocks服务器之前，设置以下参数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ulimit -n 51200</span><br></pre></td></tr></table></figure>
+<p><strong>第二步，调整内核参数</strong></p>
+<p>修改配置文件 <code>/etc/sysctl.conf</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fs.file-max = 51200</span><br><span class="line"></span><br><span class="line">net.core.rmem_max = 67108864</span><br><span class="line">net.core.wmem_max = 67108864</span><br><span class="line">net.core.netdev_max_backlog = 250000</span><br><span class="line">net.core.somaxconn = 4096</span><br><span class="line"></span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line">net.ipv4.tcp_tw_recycle = 0</span><br><span class="line">net.ipv4.tcp_fin_timeout = 30</span><br><span class="line">net.ipv4.tcp_keepalive_time = 1200</span><br><span class="line">net.ipv4.ip_local_port_range = 10000 65000</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 8192</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 5000</span><br><span class="line">net.ipv4.tcp_fastopen = 3</span><br><span class="line">net.ipv4.tcp_rmem = 4096 87380 67108864</span><br><span class="line">net.ipv4.tcp_wmem = 4096 65536 67108864</span><br><span class="line">net.ipv4.tcp_mtu_probing = 1</span><br><span class="line">net.ipv4.tcp_congestion_control = hybla</span><br></pre></td></tr></table></figure>
+<p>修改后执行 <code>sysctl -p</code> 使配置生效</p>
+<h4 id="重启Shadowsocks-服务"><a href="#重启Shadowsocks-服务" class="headerlink" title="重启Shadowsocks 服务"></a>重启Shadowsocks 服务</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.ancoka.com/2019/11/20/Shadowsocks-CentOS-服务器优化/" data-id="ck36qdzw1000uwhpx47c0p31q" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器优化/">服务器优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/科学上网/">科学上网</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/05/Navicat-Premium-12-1-15-for-Mac-破解教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Navicat Premium 12.1.15 for Mac 破解教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">楠枫渡</h1>
+    <h2 class="blog-subtitle">Stay hungry, Stay foolish.</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/about" title="About">
+            <li>关于</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <h2 class="author">楠枫渡</h2>
+    <h3 class="description">Thinking &amp;&amp; coding</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>13</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/ancoka" target="_blank" title="Github">
+          Github
+        </a>
+      
+        <a class="hvr-bounce-in" href="https://twitter.com/imancoka" target="_blank" title="Twitter">
+          Twitter
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://weibo.com/soyaf518" target="_blank" title="Weibo">
+          Weibo
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.sqrtthree.com" target="_blank" title="根号三">
+          根号三
+        </a>
+      
+        <a class="hvr-bounce-in" href="http://www.uphper.com" target="_blank" title="南宫尘">
+          南宫尘
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 楠枫渡<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+        |<script src="https://s11.cnzz.com/z_stat.php?id=1256688249&web_id=1256688249" language="JavaScript"></script>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/about" title="" class="menuItem">关于</a>
+          
+        </div>
+        
+          <audio id="audio" src="plugin/galmenu/wulusai.mp3"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -8,7 +8,7 @@
   <meta name="description" content="Thinking &amp;&amp; coding">
 <meta property="og:type" content="website">
 <meta property="og:title" content="楠枫渡">
-<meta property="og:url" content="http://ancoka.com/page/3/index.html">
+<meta property="og:url" content="http://blog.ancoka.com/page/3/index.html">
 <meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="Thinking &amp;&amp; coding">
 <meta property="og:locale" content="zh-CN">
@@ -42,9 +42,9 @@
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
       <a href="/categories"><div><strong>13</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -73,6 +73,67 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-MySQL基础知识总结" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/12/MySQL基础知识总结/" class="article-date">
+  <time class="post-time" datetime="2015-11-12T02:49:13.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br>
+    <span class="post-day">12</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/12/MySQL基础知识总结/">MySQL基础知识总结</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3>一、mysql数据库查看相关信息的语句</h3>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">-- 查看数据库的版本号</span><br><span class="line">SELECT VERSION();</span><br><span class="line">-- 产看当前用户</span><br><span class="line">SELECT USER(),CURRENT_USER();</span><br><span class="line">-- 查看当前正在使用的数据库</span><br><span class="line">SELECT DATABASE();</span><br><span class="line">-- 查看当前日期</span><br><span class="line">SELECT CURDATE(),CURRENT_DATE();</span><br><span class="line">-- 查看当前的时间</span><br><span class="line">SELECT CURTIME(),CURRENT_TIME();</span><br><span class="line">-- 查看当前的时间戳</span><br><span class="line">SELECT NOW(),CURRENT_TIMESTAMP();</span><br><span class="line">-- 查看mysql支持的所有的字符编码</span><br><span class="line">SHOW CHARSET;</span><br><span class="line">-- 查看以s开头的字符编码</span><br><span class="line">SHOW CHARSET LIKE &apos;s%&apos;; </span><br><span class="line">-- 查看变量名为char开头的变量</span><br><span class="line">SHOW VARIABLES LIKE &apos;char%&apos;;</span><br><span class="line">-- 查看数据库支持的所有引擎</span><br><span class="line">SHOW ENGINES;</span><br><span class="line">-- 查看所有的数据库</span><br><span class="line">SHOW DATABASES;</span><br><span class="line">-- 查看所有的表</span><br><span class="line">SHOW TABLES;</span><br><span class="line">-- 查看标准建库语句</span><br><span class="line">SHOW CREATE DATABASE tableName;</span><br><span class="line">-- 查看标准的建表语句</span><br><span class="line">SHOW CREATE TABLE tableName;</span><br><span class="line">-- 查看表的所有字段信息</span><br><span class="line">SHOW FULL COLUMNS FROM tableName;</span><br><span class="line">-- 查看表结构[DESCRIBE的缩写:DESC</span><br><span class="line">DESC tableName;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/12/MySQL基础知识总结/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.ancoka.com/2015/11/12/MySQL基础知识总结/" data-id="ck36qdzvn0009whpxkywe3g3g" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-Yii无限级分类实现下拉列表效果" class="wow slideInRight article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
@@ -121,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ancoka.com/2015/10/31/Yii无限级分类实现下拉列表效果/" data-id="cjv0n4j0r000vhvpxn50ic728" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/10/31/Yii无限级分类实现下拉列表效果/" data-id="ck36qdzw80013whpxyylh2ed8" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
@@ -182,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ancoka.com/2015/10/31/Yii实现数据分页/" data-id="cjv0n4j0g000ohvpxt49fq6fw" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/10/31/Yii实现数据分页/" data-id="ck36qdzwi001uwhpxqocumqyy" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yii/">Yii</a></li></ul>
@@ -249,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ancoka.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/" data-id="cjv0n4j01000chvpx9l5znz4n" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2015/10/31/PHP基于session-ajax实现文件上传进度条/" data-id="ck36qdzvp000dwhpxky3a7qwg" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
@@ -311,9 +372,9 @@
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>23</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
       <a href="/categories"><div><strong>13</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>27</strong><br>标签</div></a>
+      <a href="/tags"><div><strong>28</strong><br>标签</div></a>
     </div>
 
 
