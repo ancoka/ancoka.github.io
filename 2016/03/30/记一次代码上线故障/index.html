@@ -13,14 +13,14 @@
 <meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="项目采用 Git 将项目上线之后，需要安装 Laravel 框架，及在开发过程中的一些第三发扩展，上线之后，使用 composer install 安装项目，发现未完整安装整个扩展，然后直接执行 composer update 进行更新安装，结果出现：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oqqufn3yq.bkt.clouddn.com/1459270581180095.png">
-<meta property="og:image" content="http://oqqufn3yq.bkt.clouddn.com/1459270670444121.png">
-<meta property="og:image" content="http://oqqufn3yq.bkt.clouddn.com/1459270869575578.png">
-<meta property="og:updated_time" content="2017-05-30T05:18:34.000Z">
+<meta property="og:image" content="http://oss.huaxiaomeng.cn/1459270581180095.png">
+<meta property="og:image" content="http://oss.huaxiaomeng.cn/1459270670444121.png">
+<meta property="og:image" content="http://oss.huaxiaomeng.cn/1459270869575578.png">
+<meta property="og:updated_time" content="2020-02-26T04:35:21.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次代码上线故障">
 <meta name="twitter:description" content="项目采用 Git 将项目上线之后，需要安装 Laravel 框架，及在开发过程中的一些第三发扩展，上线之后，使用 composer install 安装项目，发现未完整安装整个扩展，然后直接执行 composer update 进行更新安装，结果出现：">
-<meta name="twitter:image" content="http://oqqufn3yq.bkt.clouddn.com/1459270581180095.png">
+<meta name="twitter:image" content="http://oss.huaxiaomeng.cn/1459270581180095.png">
   
     <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
@@ -44,7 +44,7 @@
         <div class="widget-wrap mobile-header">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?s=400&amp;u=736f7f40b209f079e90430894567cc6e5a2b1eae&amp;v=4">
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
@@ -116,19 +116,19 @@
       
         <ol>
 <li><p>项目采用 Git 将项目上线之后，需要安装 Laravel 框架，及在开发过程中的一些第三发扩展，上线之后，使用 composer install 安装项目，发现未完整安装整个扩展，然后直接执行 composer update 进行更新安装，结果出现：</p>
-<p> <img src="http://oqqufn3yq.bkt.clouddn.com/1459270581180095.png" alt="图1"></p>
+<p> <img src="http://oss.huaxiaomeng.cn/1459270581180095.png" alt="图1"></p>
 </li>
 </ol>
 <a id="more"></a>
 <ol start="2">
 <li><p>分析错误原因，是因为无法分配所致，无法分配内存一般都是内存不够分配的，使用free -m查看了下机器内存的使用情况，如下：</p>
-<p> <img src="http://oqqufn3yq.bkt.clouddn.com/1459270670444121.png" alt="图2"></p>
+<p> <img src="http://oss.huaxiaomeng.cn/1459270670444121.png" alt="图2"></p>
 </li>
 <li><p>由于笔者实在太穷逼了，买不起高大上的服务器，自己买的是台1G内存的VPS，内存不够怎么办呢？笔者实在没钱在去升级VPS的内存了，索性就用swap分区代替吧。至于什么是交换分区，这里就不科普了，感兴趣的自行区Google吧。下面就开始，给服务器添加交换分配，交换分区的大小最好是内存的1-2倍：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024</span><br><span class="line"><span class="meta">#</span> /sbin/mkswap /var/swap.1</span><br><span class="line"><span class="meta">#</span> /sbin/swapon /var/swap.1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>依次执行上面命令后，使用free -m命令，发现交换分区已经有了1G可用空间：</p>
-<p> <img src="http://oqqufn3yq.bkt.clouddn.com/1459270869575578.png" alt="图3"></p>
+<p> <img src="http://oss.huaxiaomeng.cn/1459270869575578.png" alt="图3"></p>
 </li>
 <li><p>然后执行composer update操作，顺利安装完成所有扩展。查看composer官方故障诊断文档: <a href="https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors" target="_blank" rel="noopener">https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors</a></p>
 </li>
@@ -137,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2016/03/30/记一次代码上线故障/" data-id="ck36qdzwg001owhpx68z8343g" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2016/03/30/记一次代码上线故障/" data-id="ck72u3yiy001o4ppx6mji3xf8" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -209,7 +209,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?s=400&amp;u=736f7f40b209f079e90430894567cc6e5a2b1eae&amp;v=4">
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
@@ -259,7 +259,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2018 - 2019 楠枫渡<br>
+      &copy;2019 - 2020 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       

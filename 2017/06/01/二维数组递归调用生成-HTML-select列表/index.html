@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="楠枫渡">
 <meta property="og:description" content="123456789101112&amp;lt;?php  $data = [	[&apos;id&apos; =&amp;gt; 1, &apos;parent_id&apos; =&amp;gt; 0, &apos;dpath&apos; =&amp;gt; 1, &apos;name&apos; =&amp;gt; &apos;服装&apos;],	[&apos;id&apos; =&amp;gt; 2, &apos;parent_id&apos; =&amp;gt; 1, &apos;dpath&apos; =&amp;gt; 2, &apos;name&apos; =&amp;gt; &apos;男士服装&apos;],	[&apos;id&apos; =&amp;gt; 3, &apos;p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oqqufn3yq.bkt.clouddn.com/20170426184008.png">
-<meta property="og:updated_time" content="2017-05-31T16:33:15.000Z">
+<meta property="og:image" content="http://oss.huaxiaomeng.cn/20170426184008.png">
+<meta property="og:updated_time" content="2020-02-26T04:35:19.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二维数组递归调用生成 HTML select列表">
 <meta name="twitter:description" content="123456789101112&amp;lt;?php  $data = [	[&apos;id&apos; =&amp;gt; 1, &apos;parent_id&apos; =&amp;gt; 0, &apos;dpath&apos; =&amp;gt; 1, &apos;name&apos; =&amp;gt; &apos;服装&apos;],	[&apos;id&apos; =&amp;gt; 2, &apos;parent_id&apos; =&amp;gt; 1, &apos;dpath&apos; =&amp;gt; 2, &apos;name&apos; =&amp;gt; &apos;男士服装&apos;],	[&apos;id&apos; =&amp;gt; 3, &apos;p">
-<meta name="twitter:image" content="http://oqqufn3yq.bkt.clouddn.com/20170426184008.png">
+<meta name="twitter:image" content="http://oss.huaxiaomeng.cn/20170426184008.png">
   
     <link rel="alternate" href="/atom.xml" title="楠枫渡" type="application/atom+xml">
   
@@ -42,7 +42,7 @@
         <div class="widget-wrap mobile-header">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?s=400&amp;u=736f7f40b209f079e90430894567cc6e5a2b1eae&amp;v=4">
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
@@ -115,14 +115,14 @@
         <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  $data = [</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">1</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">0</span>, <span class="string">'dpath'</span> =&gt; <span class="number">1</span>, <span class="string">'name'</span> =&gt; <span class="string">'服装'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">2</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">1</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'男士服装'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">3</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">2</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'外套'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">4</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">2</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'裤子'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">5</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">0</span>, <span class="string">'dpath'</span> =&gt; <span class="number">1</span>, <span class="string">'name'</span> =&gt; <span class="string">'家用电器'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">6</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">5</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'冰箱'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">7</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">6</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'海尔冰箱'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">8</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">5</span>, <span class="string">'dpath'</span> =&gt; <span class="number">2</span>, <span class="string">'name'</span> =&gt; <span class="string">'空调'</span>],</span><br><span class="line">	[<span class="string">'id'</span> =&gt; <span class="number">9</span>, <span class="string">'parent_id'</span> =&gt; <span class="number">8</span>, <span class="string">'dpath'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'格力空调'</span>]</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>将数组处理成，如下格式：</p>
-<p><img src="http://oqqufn3yq.bkt.clouddn.com/20170426184008.png" alt="无限级分类"></p>
+<p><img src="http://oss.huaxiaomeng.cn/20170426184008.png" alt="无限级分类"></p>
 <p>具体 PHP 实现如下:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectHtml</span><span class="params">($data, $name, $select_id = null)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $options = data2options($data, <span class="number">0</span>, <span class="string">''</span>, $select_id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;select name="'</span>. $name .<span class="string">'" class="form-control"&gt;'</span> . $options . <span class="string">'&lt;/select&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">data2options</span><span class="params">($data, $pid=<span class="number">0</span>, $options = <span class="string">''</span>, $select_id)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">foreach</span>($data <span class="keyword">as</span> $k=&gt;$v)&#123;</span><br><span class="line">		<span class="keyword">if</span>($v[<span class="string">'parent_id'</span>] == $pid)&#123;</span><br><span class="line">			$options .= <span class="string">'&lt;option value="'</span> . $v[<span class="string">'id'</span>] . <span class="string">'"'</span> . ($select_id &amp;&amp; $select_id == $v[<span class="string">'id'</span>] ? <span class="string">'selected'</span> : <span class="string">''</span>) . <span class="string">'&gt;'</span></span><br><span class="line">                     . ($v[<span class="string">'dpath'</span>] != <span class="number">1</span> ? <span class="string">'|'</span> : <span class="string">''</span>) . str_repeat(<span class="string">'----'</span>, $v[<span class="string">'dpath'</span>] - <span class="number">1</span>) . $v[<span class="string">'name'</span>] . <span class="string">'&lt;/option&gt;'</span>;</span><br><span class="line">			<span class="keyword">unset</span>($data[$k]);</span><br><span class="line">			$options = data2options($data, $v[<span class="string">'id'</span>], $options, $select_id);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> $options;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$selectHtml = selectHtml($data, <span class="string">'category_id'</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line"><span class="keyword">echo</span> $selectHtml;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ancoka.com/2017/06/01/二维数组递归调用生成-HTML-select列表/" data-id="ck36qdzwk001wwhpx4kw41dml" class="article-share-link">分享</a>
+      <a data-url="http://blog.ancoka.com/2017/06/01/二维数组递归调用生成-HTML-select列表/" data-id="ck72u3yiq00134ppxjgaiwnpb" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/">Laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
@@ -194,7 +194,7 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?v=3&amp;s=400">
+    <img class="avatar" src="https://avatars2.githubusercontent.com/u/9568665?s=400&amp;u=736f7f40b209f079e90430894567cc6e5a2b1eae&amp;v=4">
     <h2 class="author">楠枫渡</h2>
     <h3 class="description">Thinking &amp;&amp; coding</h3>
     <div class="count-box">
@@ -244,7 +244,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy;2018 - 2019 楠枫渡<br>
+      &copy;2019 - 2020 楠枫渡<br>
       由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
       主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
       
